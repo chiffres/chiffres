@@ -3,8 +3,7 @@ Currently, you define two states circulation (certainty) and rest (a gamble). We
  * Spending on a local good → increases the "stability" of the Chiffres (they mutate less quickly if they return to the bank).
  * Spending on a risky project (startup, speculation) → increases their future volatility.
 Thus, the currency remembers how it has circulated.
-2. Introduce GEMs or Catalysts
-You've already mentioned GEMs for Hauterroir. Here, they could become probability modifiers in the casino:
+2. Introduce GEMs or Catalyst. Here, they could become probability modifiers in the casino:
  * Holding GEMs can reduce the magnitude of a loss, or conversely, multiply a gain.
  * GEMs can be linked to concrete actions (planting a tree, donating to a charity, participating in a project).
    → This links the currency to ethics and ecology, not by force, but by creating a subtle incentive.
