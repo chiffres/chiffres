@@ -1,11 +1,23 @@
 #include "Chiffres.h"
 
-namespace {
-    constexpr double TAU = 6.28318530717958647692; // 2*pi
-}
+using namespace Chiffre;
+
+constexpr double TAU = 6.28318530717958647692; // 2*pi
 
 Chiffres::Chiffres(const double initial)
     : total_(initial) {
+}
+
+State Chiffres::state() const noexcept {
+    return state_;
+}
+
+double Chiffres::total() const noexcept {
+    return total_;
+}
+
+const Memory & Chiffres::memory() const noexcept {
+    return mem_;
 }
 
 void Chiffres::record_flow(const double amount, const bool incoming) {
@@ -28,18 +40,18 @@ void Chiffres::receive(const double amount) {
     record_flow(amount, /*incoming=*/true);
 }
 
-double Chiffres::draw_mutation_factor(const EthicsScore &e, const CyclePhase &c) const {
+double Chiffres::draw_mutation_factor(const EthicsScore &ethics, const CyclePhase &cycle) const {
     double mu_log = 0.0;
     double sigma_log = 0.02;
 
     sigma_log *= mem_.volatility_bias;
     sigma_log /= std::max(1e-9, mem_.stability_bias);
 
-    const double phase = std::clamp(c.phase, 0.0, 1.0);
+    const double phase = std::clamp(cycle.phase, 0.0, 1.0);
     const double cycle_boost = 1.0 + 0.5 * std::sin(TAU * phase); // [-0.5..+0.5] -> [0.5..1.5]
     sigma_log *= std::clamp(cycle_boost, 0.5, 1.5);
 
-    const double es = std::clamp(e.score, -1.0, 1.0);
+    const double es = std::clamp(ethics.score, -1.0, 1.0);
     sigma_log *= 1.0 - 0.5 * es;
     mu_log += 0.01 * es;
 
@@ -63,4 +75,8 @@ double Chiffres::mutate(const EthicsScore &ethics, const CyclePhase &cycle) {
         mem_.stability_bias = std::min(3.0, mem_.stability_bias * (1.0 + 0.5 * ethics.score));
     }
     return delta;
+}
+
+void Chiffres::set_state(State state) noexcept {
+    state_ = state;
 }

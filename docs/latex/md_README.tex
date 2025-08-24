@@ -1,0 +1,119 @@
+\chapter{Chiffres – A Sentient Economic System}
+\hypertarget{md_README}{}\label{md_README}\index{Chiffres – A Sentient Economic System@{Chiffres – A Sentient Economic System}}
+\label{md_README_autotoc_md0}%
+\Hypertarget{md_README_autotoc_md0}%
+
+
+\begin{quote}
+{\itshape “\+Value is alive. Certain in circulation, mutable at rest. A cosmic gamble influenced by ethics, cycles, and collective memory.\+”} \end{quote}
+\hypertarget{md_README_autotoc_md1}{}\doxysection{\texorpdfstring{Vision}{Vision}}\label{md_README_autotoc_md1}
+{\bfseries{Chiffres}} is not just a currency – it is a {\bfseries{living system}}. Unlike traditional money (stable when hoarded, inert when circulating), Chiffres reverses the paradigm\+:
+
+
+\begin{DoxyItemize}
+\item {\bfseries{Circulation = Certainty}} When you spend or receive, the value is exact. 100 Chiffres spent = 100 Chiffres received. But {\itshape how} you spend matters\+:
+\begin{DoxyItemize}
+\item {\bfseries{Local good}} → stabilizes your Chiffres.
+\item {\bfseries{Risky project}} → makes them more volatile in the future. Thus, the currency {\bfseries{remembers how it has circulated}}.
+\end{DoxyItemize}
+\item {\bfseries{Rest = Gamble}} When hoarded, Chiffres enter a quantum-\/like state. Their value mutates unpredictably according to\+:
+\begin{DoxyItemize}
+\item {\bfseries{Ethics / GEMs}} (virtuous actions stabilize, destructive ones destabilize).
+\item {\bfseries{Cycles of Time}} (solstices, seasons, years).
+\item {\bfseries{Weights / Elements}} (small fortunes = wind/water, large fortunes = earth/fire).
+\item {\bfseries{Collective Ether}} (if many stagnate, all are dragged down; if all circulate, everyone rises).
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md2}{}\doxysection{\texorpdfstring{Core Principles}{Core Principles}}\label{md_README_autotoc_md2}
+
+\begin{DoxyEnumerate}
+\item {\bfseries{Circulation as Memory}}
+\begin{DoxyItemize}
+\item Spending leaves an imprint. The past of your Chiffres influences their volatility.
+\end{DoxyItemize}
+\item {\bfseries{GEMs as Catalysts}}
+\begin{DoxyItemize}
+\item Linked to concrete actions (planting a tree, donating, collaborating).
+\item Reduce losses or amplify gains in the cosmic gamble.
+\end{DoxyItemize}
+\item {\bfseries{Temporal Cycles}}
+\begin{DoxyItemize}
+\item Mutations follow natural rhythms.
+\item At the winter solstice, great fortunes face monumental risks.
+\item At equinoxes, the system seeks balance.
+\end{DoxyItemize}
+\item {\bfseries{The Collective Ether}}
+\begin{DoxyItemize}
+\item Gains “consume” the Ether (making Chiffres rarer, everyone benefits).
+\item Losses “dissolve” into the Ether (making it thicker, everyone loses a bit).
+\item When too many stagnate, value decreases → inciting action.
+\end{DoxyItemize}
+\item {\bfseries{Symbolic Weights}}
+\begin{DoxyItemize}
+\item {\bfseries{Light weights (small sums)\+:}} wind, water – fast, playful, changeable.
+\item {\bfseries{Heavy weights (large sums)\+:}} earth, fire – slow, transformative, existential.
+\end{DoxyItemize}
+\item {\bfseries{Council of Chiffres (Governance)}}
+\begin{DoxyItemize}
+\item Open assembly adjusting parameters (mutation frequency, Ether weights).
+\item Decisions themselves are gambles – they may backfire if the Ether shifts.
+\end{DoxyItemize}
+\end{DoxyEnumerate}\hypertarget{md_README_autotoc_md3}{}\doxysection{\texorpdfstring{Technical Overview}{Technical Overview}}\label{md_README_autotoc_md3}
+
+\begin{DoxyItemize}
+\item {\bfseries{Language\+:}} C++20
+\item {\bfseries{Core\+:}} {\ttfamily Chiffres} (wallets that mutate) + {\ttfamily Ether} (collective field)
+\item {\bfseries{States\+:}}
+\begin{DoxyItemize}
+\item {\ttfamily Circulation} (deterministic transactions)
+\item {\ttfamily Rest} (stochastic mutation via log-\/normal distribution)
+\end{DoxyItemize}
+\item {\bfseries{Modifiers\+:}}
+\begin{DoxyItemize}
+\item {\ttfamily Ethics\+Score} → \mbox{[}-\/1, +1\mbox{]}
+\item {\ttfamily Cycle\+Phase} → \mbox{[}0,1) annual phase
+\item {\ttfamily Memory} → volatility/stability biases
+\item {\ttfamily GEMs} (planned extension)
+\end{DoxyItemize}
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md4}{}\doxysection{\texorpdfstring{Build \& Run}{Build \& Run}}\label{md_README_autotoc_md4}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{git\ clone\ https://github.com/chiffres/chiffres}
+\DoxyCodeLine{cd\ chiffres}
+\DoxyCodeLine{cmake\ -\/B\ build\ -\/DCMAKE\_BUILD\_TYPE=Release}
+\DoxyCodeLine{cmake\ -\/-\/build\ build\ -\/j}
+\DoxyCodeLine{./build/chiffres\_demo}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md5}{}\doxysection{\texorpdfstring{Example}{Example}}\label{md_README_autotoc_md5}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <Chiffres.h>}}
+\DoxyCodeLine{\textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\textcolor{keywordtype}{int}\ main()\ \{}
+\DoxyCodeLine{\ \ \ \ Chiffres\ wallet(1000.0);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ wallet.receive(200.0);\ \ \textcolor{comment}{//\ certainty}}
+\DoxyCodeLine{\ \ \ \ wallet.spend(50.0);}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ wallet.set\_state(State::Rest);}
+\DoxyCodeLine{\ \ \ \ EthicsScore\ ethics\{+0.6\};\ \textcolor{comment}{//\ good\ actions}}
+\DoxyCodeLine{\ \ \ \ CyclePhase\ cycle\{0.0\};\ \ \ \ \textcolor{comment}{//\ winter\ solstice}}
+\DoxyCodeLine{}
+\DoxyCodeLine{\ \ \ \ \textcolor{keywordtype}{double}\ delta\ =\ wallet.mutate(ethics,\ cycle);}
+\DoxyCodeLine{\ \ \ \ std::cout\ <<\ \textcolor{stringliteral}{"{}Mutation:\ "{}}\ <<\ delta}
+\DoxyCodeLine{\ \ \ \ \ \ \ \ \ \ \ \ \ \ <<\ \textcolor{stringliteral}{"{}\ |\ Total:\ "{}}\ <<\ wallet.total()\ <<\ \textcolor{stringliteral}{"{}\(\backslash\)n"{}};}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md6}{}\doxysection{\texorpdfstring{Roadmap}{Roadmap}}\label{md_README_autotoc_md6}
+
+\begin{DoxyItemize}
+\item \mbox{[}x\mbox{]} Core engine ({\ttfamily Circulation}, {\ttfamily Rest}, {\ttfamily Ether}, {\ttfamily Memory})
+\item \mbox{[} \mbox{]} GEMs / Catalysts
+\item \mbox{[} \mbox{]} Temporal cycles (calendar integration)
+\item \mbox{[} \mbox{]} Elemental Weights (linking fortunes to nature)
+\item \mbox{[} \mbox{]} Council of Chiffres (governance layer)
+\item \mbox{[} \mbox{]} Visualization / Simulation tools
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md7}{}\doxysection{\texorpdfstring{License}{License}}\label{md_README_autotoc_md7}
+AGPL-\/3.\+0 – free to use, share, and improve. If you build upon Chiffres, share it back with the community 

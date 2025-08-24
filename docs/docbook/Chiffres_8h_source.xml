@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_Chiffres_8h_source" xml:lang="en-US">
+<title>Chiffres.h</title>
+<programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#pragma&#32;once</emphasis>
+2 <emphasis role="preprocessor">#include&#32;&lt;random&gt;</emphasis>
+3 <emphasis role="preprocessor">#include&#32;&lt;cstdint&gt;</emphasis>
+4 <emphasis role="preprocessor">#include&#32;&lt;algorithm&gt;</emphasis>
+5 <emphasis role="preprocessor">#include&#32;&lt;stdexcept&gt;</emphasis>
+6 <emphasis role="preprocessor">#include&#32;&lt;cmath&gt;</emphasis>
+7 <emphasis role="preprocessor">#include&#32;&quot;Ether.h&quot;</emphasis>
+8 
+9 <emphasis role="keyword">namespace&#32;</emphasis>Chiffre&#32;{
+15 &#32;&#32;&#32;&#32;<emphasis role="keyword">enum&#32;class</emphasis>&#32;State&#32;{
+17 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Circulation,
+19 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Rest
+20 &#32;&#32;&#32;&#32;};
+21 
+31 &#32;&#32;&#32;&#32;<emphasis role="keyword">struct&#32;</emphasis><link linkend="_structChiffre_1_1EthicsScore">EthicsScore</link>&#32;{
+33 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_structChiffre_1_1EthicsScore_1aa115796ab4a9940bd4a4b23cf8639293">score</link>&#32;=&#32;0.0;
+34 &#32;&#32;&#32;&#32;};
+35 
+49 &#32;&#32;&#32;&#32;<emphasis role="keyword">struct&#32;</emphasis><link linkend="_structChiffre_1_1CyclePhase">CyclePhase</link>&#32;{
+51 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_structChiffre_1_1CyclePhase_1aa9b718f508b6813a909b1cdba51a8023">phase</link>&#32;=&#32;0.0;
+52 &#32;&#32;&#32;&#32;};
+53 
+61 &#32;&#32;&#32;&#32;<emphasis role="keyword">struct&#32;</emphasis><link linkend="_structChiffre_1_1Memory">Memory</link>&#32;{
+63 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_structChiffre_1_1Memory_1a6483e19169671e29f3ba89418c048976">volatility_bias</link>&#32;=&#32;1.0;
+65 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_structChiffre_1_1Memory_1a98dfd64a393542a15dc2208e23697328">stability_bias</link>&#32;=&#32;1.0;
+67 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;std::uint64_t&#32;<link linkend="_structChiffre_1_1Memory_1a76aeea396c98fe992af847da57c8f463">events</link>&#32;=&#32;0;
+68 &#32;&#32;&#32;&#32;};
+69 
+87 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="_classChiffre_1_1Chiffres_1ab634932f4a81f306bc502ab74cc5961e">Chiffres</link>&#32;{
+88 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
+95 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">explicit</emphasis>&#32;<link linkend="_classChiffre_1_1Chiffres_1ab634932f4a81f306bc502ab74cc5961e">Chiffres</link>(<emphasis role="keywordtype">double</emphasis>&#32;initial&#32;=&#32;0.0);
+96 
+106 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classChiffre_1_1Chiffres_1a1775f1efa4558fe96f68769601eaf4c5">spend</link>(<emphasis role="keywordtype">double</emphasis>&#32;amount);
+107 
+117 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classChiffre_1_1Chiffres_1aa9948f8a07717adc95f881bf0cf91337">receive</link>(<emphasis role="keywordtype">double</emphasis>&#32;amount);
+118 
+137 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_classChiffre_1_1Chiffres_1aeeb7f690b09aa155cd08e48bf727d3bf">mutate</link>(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_structChiffre_1_1EthicsScore">EthicsScore</link>&#32;&amp;ethics,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_structChiffre_1_1CyclePhase">CyclePhase</link>&#32;&amp;cycle);
+138 
+140 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classChiffre_1_1Chiffres_1ad882ac97246d8ab8ec489e414328de98">set_state</link>(State&#32;<link linkend="_classChiffre_1_1Chiffres_1a6eed8efbe09210ed20540c9c06a68610">state</link>)&#32;<emphasis role="keyword">noexcept</emphasis>;
+141 
+143 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[[nodiscard]]&#32;State&#32;<link linkend="_classChiffre_1_1Chiffres_1a6eed8efbe09210ed20540c9c06a68610">state</link>()&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keyword">noexcept</emphasis>;
+144 
+146 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[[nodiscard]]&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_classChiffre_1_1Chiffres_1ac5f6f4ea0978267969f0718d33b33973">total</link>()&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keyword">noexcept</emphasis>;
+147 
+149 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[[nodiscard]]&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_structChiffre_1_1Memory">Memory</link>&#32;&amp;<link linkend="_classChiffre_1_1Chiffres_1a355f163dc38b16c95d2dc1297d59dcf9">memory</link>()&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keyword">noexcept</emphasis>;
+150 
+163 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classChiffre_1_1Chiffres_1aaf0f2309d9f8a1f4cee008c7d2cc9bbf">record_flow</link>(<emphasis role="keywordtype">double</emphasis>&#32;amount,&#32;<emphasis role="keywordtype">bool</emphasis>&#32;incoming);
+164 
+165 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>:
+182 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[[nodiscard]]&#32;<emphasis role="keywordtype">double</emphasis>&#32;draw_mutation_factor(<emphasis role="keyword">const</emphasis>&#32;<link linkend="_structChiffre_1_1EthicsScore">EthicsScore</link>&#32;&amp;ethics,&#32;<emphasis role="keyword">const</emphasis>&#32;<link linkend="_structChiffre_1_1CyclePhase">CyclePhase</link>&#32;&amp;cycle)&#32;<emphasis role="keyword">const</emphasis>;
+183 
+185 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;State&#32;state_&#32;=&#32;State::Circulation;
+186 
+188 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">double</emphasis>&#32;total_;
+189 
+191 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="_structChiffre_1_1Memory">Memory</link>&#32;mem_;
+192 
+194 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<emphasis role="keyword">inline</emphasis>&#32;std::mt19937_64&#32;rng{std::random_device{}()};
+195 &#32;&#32;&#32;&#32;};
+196 }
+</programlisting></section>

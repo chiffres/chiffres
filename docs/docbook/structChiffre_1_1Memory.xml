@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structChiffre_1_1Memory" xml:lang="en-US">
+<title>Chiffre::Memory Struct Reference</title>
+<indexterm><primary>Chiffre::Memory</primary></indexterm>
+<para>
+
+<para><link linkend="_structChiffre_1_1Memory">Memory</link> of past wallet behavior. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;Chiffres.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_structChiffre_1_1Memory_1a6483e19169671e29f3ba89418c048976"/>double <emphasis role="strong">volatility_bias</emphasis> = 1.0</para>
+
+<para>amplifies variance in future mutations. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_structChiffre_1_1Memory_1a98dfd64a393542a15dc2208e23697328"/>double <emphasis role="strong">stability_bias</emphasis> = 1.0</para>
+
+<para>damps shocks, makes mutations gentler. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_structChiffre_1_1Memory_1a76aeea396c98fe992af847da57c8f463"/>std::uint64_t <emphasis role="strong">events</emphasis> = 0</para>
+
+<para>counts the numbers of recorded events. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para><link linkend="_structChiffre_1_1Memory">Memory</link> of past wallet behavior. </para>
+
+
+
+<para>This structure accumulates a history of flows and mutations, and biases future stochastic dynamics: </para>
+<para>
+The documentation for this struct was generated from the following file:</para>
+Chiffres.h</section>
+</section>

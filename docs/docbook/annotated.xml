@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_annotated" xml:lang="en-US">
+<title>Class List</title>
+Here are the classes, structs, unions and interfaces with brief descriptions:<link linkend="_classChiffre_1_1Chiffres">Chiffre::Chiffres</link>
+<para>Core abstraction of the <link linkend="_classChiffre_1_1Chiffres">Chiffres</link> monetary system </para>
+<link linkend="_structChiffre_1_1CyclePhase">Chiffre::CyclePhase</link>
+<para>Position within a natural or symbolic cycle </para>
+<link linkend="_classChiffre_1_1Ether">Chiffre::Ether</link>
+<para>Collective monetary field in the <link linkend="_classChiffre_1_1Chiffres">Chiffres</link> system </para>
+<link linkend="_structChiffre_1_1EthicsScore">Chiffre::EthicsScore</link>
+<para>Ethical score associated with an actor or portfolio </para>
+<link linkend="_structChiffre_1_1Memory">Chiffre::Memory</link>
+<para><link linkend="_structChiffre_1_1Memory">Memory</link> of past wallet behavior </para>
+</section>

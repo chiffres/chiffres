@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structMemory" xml:lang="en-US">
+<title>Memory Struct Reference</title>
+<indexterm><primary>Memory</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_structMemory_1a9d7b41961a5a5770c9dbd6975ad9736c"/>double <emphasis role="strong">volatility_bias</emphasis> = 1.0</para>
+</listitem>
+            <listitem><para><anchor xml:id="_structMemory_1af8f1c0086d15c799e9eca7a15f108247"/>double <emphasis role="strong">stability_bias</emphasis> = 1.0</para>
+</listitem>
+            <listitem><para><anchor xml:id="_structMemory_1a0b6c549e888fc588bd7b01d02ce716a1"/>std::uint64_t <emphasis role="strong">events</emphasis> = 0</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this struct was generated from the following file:</para>
+Chiffres.h</section>

@@ -1,0 +1,171 @@
+.TH "md_README" 3 "Chiffres" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+md_README \- Chiffres – A Sentient Economic System 
+.PP
+
+
+.PP
+.RS 4
+\fI“Value is alive\&. Certain in circulation, mutable at rest\&. A cosmic gamble influenced by ethics, cycles, and collective memory\&.”\fP 
+.RE
+.PP
+.SH "Vision"
+.PP
+\fBChiffres\fP is not just a currency – it is a \fBliving system\fP\&. Unlike traditional money (stable when hoarded, inert when circulating), Chiffres reverses the paradigm:
+
+.PP
+.IP "\(bu" 2
+\fBCirculation = Certainty\fP When you spend or receive, the value is exact\&. 100 Chiffres spent = 100 Chiffres received\&. But \fIhow\fP you spend matters:
+.IP "  \(bu" 4
+\fBLocal good\fP → stabilizes your Chiffres\&.
+.IP "  \(bu" 4
+\fBRisky project\fP → makes them more volatile in the future\&. Thus, the currency \fBremembers how it has circulated\fP\&.
+.PP
+
+.IP "\(bu" 2
+\fBRest = Gamble\fP When hoarded, Chiffres enter a quantum-like state\&. Their value mutates unpredictably according to:
+.IP "  \(bu" 4
+\fBEthics / GEMs\fP (virtuous actions stabilize, destructive ones destabilize)\&.
+.IP "  \(bu" 4
+\fBCycles of Time\fP (solstices, seasons, years)\&.
+.IP "  \(bu" 4
+\fBWeights / Elements\fP (small fortunes = wind/water, large fortunes = earth/fire)\&.
+.IP "  \(bu" 4
+\fBCollective Ether\fP (if many stagnate, all are dragged down; if all circulate, everyone rises)\&.
+.PP
+
+.PP
+.SH "Core Principles"
+.PP
+.IP "1." 4
+\fBCirculation as Memory\fP
+.IP "  \(bu" 4
+Spending leaves an imprint\&. The past of your Chiffres influences their volatility\&.
+.PP
+
+.IP "2." 4
+\fBGEMs as Catalysts\fP
+.IP "  \(bu" 4
+Linked to concrete actions (planting a tree, donating, collaborating)\&.
+.IP "  \(bu" 4
+Reduce losses or amplify gains in the cosmic gamble\&.
+.PP
+
+.IP "3." 4
+\fBTemporal Cycles\fP
+.IP "  \(bu" 4
+Mutations follow natural rhythms\&.
+.IP "  \(bu" 4
+At the winter solstice, great fortunes face monumental risks\&.
+.IP "  \(bu" 4
+At equinoxes, the system seeks balance\&.
+.PP
+
+.IP "4." 4
+\fBThe Collective Ether\fP
+.IP "  \(bu" 4
+Gains “consume” the Ether (making Chiffres rarer, everyone benefits)\&.
+.IP "  \(bu" 4
+Losses “dissolve” into the Ether (making it thicker, everyone loses a bit)\&.
+.IP "  \(bu" 4
+When too many stagnate, value decreases → inciting action\&.
+.PP
+
+.IP "5." 4
+\fBSymbolic Weights\fP
+.IP "  \(bu" 4
+\fBLight weights (small sums):\fP wind, water – fast, playful, changeable\&.
+.IP "  \(bu" 4
+\fBHeavy weights (large sums):\fP earth, fire – slow, transformative, existential\&.
+.PP
+
+.IP "6." 4
+\fBCouncil of Chiffres (Governance)\fP
+.IP "  \(bu" 4
+Open assembly adjusting parameters (mutation frequency, Ether weights)\&.
+.IP "  \(bu" 4
+Decisions themselves are gambles – they may backfire if the Ether shifts\&.
+.PP
+
+.PP
+.SH "Technical Overview"
+.PP
+.IP "\(bu" 2
+\fBLanguage:\fP C++20
+.IP "\(bu" 2
+\fBCore:\fP \fRChiffres\fP (wallets that mutate) + \fREther\fP (collective field)
+.IP "\(bu" 2
+\fBStates:\fP
+.IP "  \(bu" 4
+\fRCirculation\fP (deterministic transactions)
+.IP "  \(bu" 4
+\fRRest\fP (stochastic mutation via log-normal distribution)
+.PP
+
+.IP "\(bu" 2
+\fBModifiers:\fP
+.IP "  \(bu" 4
+\fREthicsScore\fP → [-1, +1]
+.IP "  \(bu" 4
+\fRCyclePhase\fP → [0,1) annual phase
+.IP "  \(bu" 4
+\fRMemory\fP → volatility/stability biases
+.IP "  \(bu" 4
+\fRGEMs\fP (planned extension)
+.PP
+
+.PP
+.SH "Build & Run"
+.PP
+.PP
+.nf
+git clone https://github\&.com/chiffres/chiffres
+cd chiffres
+cmake \-B build \-DCMAKE_BUILD_TYPE=Release
+cmake \-\-build build \-j
+\&./build/chiffres_demo
+.fi
+.PP
+.SH "Example"
+.PP
+.PP
+.nf
+#include <Chiffres\&.h>
+#include <iostream>
+
+int main() {
+    Chiffres wallet(1000\&.0);
+
+    wallet\&.receive(200\&.0);  // certainty
+    wallet\&.spend(50\&.0);
+
+    wallet\&.set_state(State::Rest);
+    EthicsScore ethics{+0\&.6}; // good actions
+    CyclePhase cycle{0\&.0};    // winter solstice
+
+    double delta = wallet\&.mutate(ethics, cycle);
+    std::cout << "Mutation: " << delta
+              << " | Total: " << wallet\&.total() << "\\n";
+}
+.fi
+.PP
+.SH "Roadmap"
+.PP
+.IP "\(bu" 2
+[x] Core engine (\fRCirculation\fP, \fRRest\fP, \fREther\fP, \fRMemory\fP)
+.IP "\(bu" 2
+[ ] GEMs / Catalysts
+.IP "\(bu" 2
+[ ] Temporal cycles (calendar integration)
+.IP "\(bu" 2
+[ ] Elemental Weights (linking fortunes to nature)
+.IP "\(bu" 2
+[ ] Council of Chiffres (governance layer)
+.IP "\(bu" 2
+[ ] Visualization / Simulation tools
+.PP
+.SH "License"
+.PP
+AGPL-3\&.0 – free to use, share, and improve\&. If you build upon Chiffres, share it back with the community 

@@ -1,0 +1,323 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classChiffre_1_1Chiffres" xml:lang="en-US">
+<title>Chiffre::Chiffres Class Reference</title>
+<indexterm><primary>Chiffre::Chiffres</primary></indexterm>
+<para>
+
+<para>Core abstraction of the <link linkend="_classChiffre_1_1Chiffres">Chiffres</link> monetary system. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;Chiffres.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><link linkend="_classChiffre_1_1Chiffres_1ab634932f4a81f306bc502ab74cc5961e">Chiffres</link> (double initial=0.0)</para>
+
+<para>Construct a wallet with an initial amount. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classChiffre_1_1Chiffres_1a1775f1efa4558fe96f68769601eaf4c5">spend</link> (double amount)</para>
+
+<para>Spend from the wallet (deterministic). </para>
+</listitem>
+            <listitem><para>void <link linkend="_classChiffre_1_1Chiffres_1aa9948f8a07717adc95f881bf0cf91337">receive</link> (double amount)</para>
+
+<para>Receive into the wallet (deterministic). </para>
+</listitem>
+            <listitem><para>double <link linkend="_classChiffre_1_1Chiffres_1aeeb7f690b09aa155cd08e48bf727d3bf">mutate</link> (const <link linkend="_structChiffre_1_1EthicsScore">EthicsScore</link> &amp;ethics, const <link linkend="_structChiffre_1_1CyclePhase">CyclePhase</link> &amp;cycle)</para>
+
+<para>Trigger a mutation when the wallet is at rest. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_classChiffre_1_1Chiffres_1ad882ac97246d8ab8ec489e414328de98"/>void <emphasis role="strong">set_state</emphasis> (State <link linkend="_classChiffre_1_1Chiffres_1a6eed8efbe09210ed20540c9c06a68610">state</link>) noexcept</para>
+
+<para>Set the current wallet state (Circulation or Rest). </para>
+</listitem>
+            <listitem><para><anchor xml:id="_classChiffre_1_1Chiffres_1a6eed8efbe09210ed20540c9c06a68610"/>State <emphasis role="strong">state</emphasis> () const noexcept</para>
+
+<para>Get current state. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_classChiffre_1_1Chiffres_1ac5f6f4ea0978267969f0718d33b33973"/>double <emphasis role="strong">total</emphasis> () const noexcept</para>
+
+<para>Get current balance. </para>
+</listitem>
+            <listitem><para><anchor xml:id="_classChiffre_1_1Chiffres_1a355f163dc38b16c95d2dc1297d59dcf9"/>const <link linkend="_structChiffre_1_1Memory">Memory</link> &amp; <emphasis role="strong">memory</emphasis> () const noexcept</para>
+
+<para>Access memory snapshot (read-only). </para>
+</listitem>
+            <listitem><para>void <link linkend="_classChiffre_1_1Chiffres_1aaf0f2309d9f8a1f4cee008c7d2cc9bbf">record_flow</link> (double amount, bool incoming)</para>
+
+<para>Record a deterministic flow (called internally by spend/receive). </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Core abstraction of the <link linkend="_classChiffre_1_1Chiffres">Chiffres</link> monetary system. </para>
+
+
+
+<para>A <link linkend="_classChiffre_1_1Chiffres">Chiffres</link> wallet is a living value container with two fundamental modes:<itemizedlist>
+<listitem>
+<para>In circulation, transactions are exact and deterministic.</para>
+</listitem><listitem>
+<para>At rest, the value undergoes probabilistic mutations governed by:<itemizedlist>
+<listitem>
+<para>Ethical influence (<link linkend="_structChiffre_1_1EthicsScore">EthicsScore</link>)</para>
+</listitem><listitem>
+<para>Natural cycles (<link linkend="_structChiffre_1_1CyclePhase">CyclePhase</link>)</para>
+</listitem><listitem>
+<para>Collective field feedback (<link linkend="_classChiffre_1_1Ether">Ether</link>)</para>
+</listitem><listitem>
+<para>Its own memory of past behaviors (<link linkend="_structChiffre_1_1Memory">Memory</link>)</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+
+<para>The class encapsulates both deterministic accounting and stochastic dynamics. </para>
+</section>
+<section>
+<title>Constructor &amp; Destructor Documentation</title>
+<anchor xml:id="_classChiffre_1_1Chiffres_1ab634932f4a81f306bc502ab74cc5961e"/><section>
+    <title>Chiffres()</title>
+<indexterm><primary>Chiffres</primary><secondary>Chiffre::Chiffres</secondary></indexterm>
+<indexterm><primary>Chiffre::Chiffres</primary><secondary>Chiffres</secondary></indexterm>
+<para><computeroutput>Chiffres::Chiffres (double initial = <computeroutput>0.0</computeroutput>
+)<computeroutput>[explicit]</computeroutput></computeroutput></para><para>
+
+<para>Construct a wallet with an initial amount. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>initial</entry><entry>
+<para>Starting balance. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classChiffre_1_1Chiffres_1aeeb7f690b09aa155cd08e48bf727d3bf"/><section>
+    <title>mutate()</title>
+<indexterm><primary>mutate</primary><secondary>Chiffre::Chiffres</secondary></indexterm>
+<indexterm><primary>Chiffre::Chiffres</primary><secondary>mutate</secondary></indexterm>
+<para><computeroutput>double Chiffres::mutate (const <link linkend="_structChiffre_1_1EthicsScore">EthicsScore</link> &amp; ethics, const <link linkend="_structChiffre_1_1CyclePhase">CyclePhase</link> &amp; cycle)</computeroutput></para><para>
+
+<para>Trigger a mutation when the wallet is at rest. </para>
+</para>
+
+<para>Applies a stochastic multiplicative factor to the current balance. The distribution is log-normal and influenced by:<itemizedlist>
+<listitem>
+<para><link linkend="_structChiffre_1_1EthicsScore">EthicsScore</link> (stability/destabilization, drift bias)</para>
+</listitem><listitem>
+<para><link linkend="_structChiffre_1_1CyclePhase">CyclePhase</link> (time-based variance modulation)</para>
+</listitem><listitem>
+<para><link linkend="_structChiffre_1_1Memory">Memory</link> (feedback from past events)</para>
+</listitem><listitem>
+<para><link linkend="_classChiffre_1_1Ether">Ether</link> (collective field density, self-regulation)</para>
+</listitem></itemizedlist>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>ethics</entry><entry>
+<para>Ethical score of the actor. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>cycle</entry><entry>
+<para>Position within the cycle of time/nature. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                <formalpara><title>Returns</title>
+
+<para>The delta applied to the balance (positive = gain, negative = loss).</para>
+</formalpara>
+<note><title>Note</title>
+
+<para>If the wallet is not in State::Rest, returns 0.0 and does nothing. </para>
+</note>
+</para>
+</section>
+<anchor xml:id="_classChiffre_1_1Chiffres_1aa9948f8a07717adc95f881bf0cf91337"/><section>
+    <title>receive()</title>
+<indexterm><primary>receive</primary><secondary>Chiffre::Chiffres</secondary></indexterm>
+<indexterm><primary>Chiffre::Chiffres</primary><secondary>receive</secondary></indexterm>
+<para><computeroutput>void Chiffres::receive (double amount)</computeroutput></para><para>
+
+<para>Receive into the wallet (deterministic). </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>amount</entry><entry>
+<para>Positive amount to add.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                
+                <formalpara>
+                    <title>
+Exceptions</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>std::invalid_argument</entry><entry>
+<para>if amount &lt; 0. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classChiffre_1_1Chiffres_1aaf0f2309d9f8a1f4cee008c7d2cc9bbf"/><section>
+    <title>record_flow()</title>
+<indexterm><primary>record_flow</primary><secondary>Chiffre::Chiffres</secondary></indexterm>
+<indexterm><primary>Chiffre::Chiffres</primary><secondary>record_flow</secondary></indexterm>
+<para><computeroutput>void Chiffres::record_flow (double amount, bool incoming)</computeroutput></para><para>
+
+<para>Record a deterministic flow (called internally by spend/receive). </para>
+</para>
+
+<para>Updates memory biases depending on:<itemizedlist>
+<listitem>
+<para>The direction of the flow (incoming/outgoing).</para>
+</listitem><listitem>
+<para>The magnitude of the transaction.</para>
+</listitem></itemizedlist>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>amount</entry><entry>
+<para>Absolute amount of the flow. </para>
+</entry>
+                            </row>
+                            <row>
+<entry>incoming</entry><entry>
+<para>True if it is an incoming transaction. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<anchor xml:id="_classChiffre_1_1Chiffres_1a1775f1efa4558fe96f68769601eaf4c5"/><section>
+    <title>spend()</title>
+<indexterm><primary>spend</primary><secondary>Chiffre::Chiffres</secondary></indexterm>
+<indexterm><primary>Chiffre::Chiffres</primary><secondary>spend</secondary></indexterm>
+<para><computeroutput>void Chiffres::spend (double amount)</computeroutput></para><para>
+
+<para>Spend from the wallet (deterministic). </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>amount</entry><entry>
+<para>Positive amount to subtract.</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                
+                <formalpara>
+                    <title>
+Exceptions</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>std::invalid_argument</entry><entry>
+<para>if amount &lt; 0. </para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                </para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+Chiffres.hChiffres.cpp</section>
+</section>

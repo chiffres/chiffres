@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classChiffres" xml:lang="en-US">
+<title>Chiffres Class Reference</title>
+<indexterm><primary>Chiffres</primary></indexterm>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_classChiffres_1ab634932f4a81f306bc502ab74cc5961e"/><emphasis role="strong">Chiffres</emphasis> (double initial=0.0)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classChiffres_1a1775f1efa4558fe96f68769601eaf4c5"/>void <emphasis role="strong">spend</emphasis> (double amount)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classChiffres_1aa9948f8a07717adc95f881bf0cf91337"/>void <emphasis role="strong">receive</emphasis> (double amount)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classChiffres_1aeeb7f690b09aa155cd08e48bf727d3bf"/>double <emphasis role="strong">mutate</emphasis> (const <link linkend="_structEthicsScore">EthicsScore</link> &amp;ethics, const <link linkend="_structCyclePhase">CyclePhase</link> &amp;cycle)</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classChiffres_1a83967bcb790484f879f50aa987a26016"/>void <emphasis role="strong">set_state</emphasis> (const State s) noexcept</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classChiffres_1a6eed8efbe09210ed20540c9c06a68610"/>State <emphasis role="strong">state</emphasis> () const noexcept</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classChiffres_1ac5f6f4ea0978267969f0718d33b33973"/>double <emphasis role="strong">total</emphasis> () const noexcept</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classChiffres_1a355f163dc38b16c95d2dc1297d59dcf9"/>const <link linkend="_structMemory">Memory</link> &amp; <emphasis role="strong">memory</emphasis> () const noexcept</para>
+</listitem>
+            <listitem><para><anchor xml:id="_classChiffres_1aaf0f2309d9f8a1f4cee008c7d2cc9bbf"/>void <emphasis role="strong">record_flow</emphasis> (double amount, bool incoming)</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this class was generated from the following files:</para>
+Chiffres.hChiffres.cpp</section>

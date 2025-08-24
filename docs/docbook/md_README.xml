@@ -1,0 +1,177 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_md_README" xml:lang="en-US">
+<title>Chiffres – A Sentient Economic System</title>
+<indexterm><primary>Chiffres – A Sentient Economic System</primary></indexterm>
+
+<para><anchor xml:id="_md_README_1autotoc_md0"/></para>
+
+<para><blockquote>
+<para><emphasis>“Value is alive. Certain in circulation, mutable at rest. A cosmic gamble influenced by ethics, cycles, and collective memory.”</emphasis> </para>
+</blockquote></para>
+<section xml:id="_md_README_1autotoc_md1">
+<title>Vision</title>
+<para><emphasis role="bold">Chiffres</emphasis> is not just a currency – it is a <emphasis role="bold">living system</emphasis>. Unlike traditional money (stable when hoarded, inert when circulating), Chiffres reverses the paradigm:</para>
+
+<para><itemizedlist>
+<listitem>
+<para><emphasis role="bold">Circulation = Certainty</emphasis> When you spend or receive, the value is exact. 100 Chiffres spent = 100 Chiffres received. But <emphasis>how</emphasis> you spend matters:<itemizedlist>
+<listitem>
+<para><emphasis role="bold">Local good</emphasis> → stabilizes your Chiffres.</para>
+</listitem><listitem>
+<para><emphasis role="bold">Risky project</emphasis> → makes them more volatile in the future. Thus, the currency <emphasis role="bold">remembers how it has circulated</emphasis>.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem>
+<para><emphasis role="bold">Rest = Gamble</emphasis> When hoarded, Chiffres enter a quantum-like state. Their value mutates unpredictably according to:<itemizedlist>
+<listitem>
+<para><emphasis role="bold">Ethics / GEMs</emphasis> (virtuous actions stabilize, destructive ones destabilize).</para>
+</listitem><listitem>
+<para><emphasis role="bold">Cycles of Time</emphasis> (solstices, seasons, years).</para>
+</listitem><listitem>
+<para><emphasis role="bold">Weights / Elements</emphasis> (small fortunes = wind/water, large fortunes = earth/fire).</para>
+</listitem><listitem>
+<para><emphasis role="bold">Collective Ether</emphasis> (if many stagnate, all are dragged down; if all circulate, everyone rises).</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</section>
+<section xml:id="_md_README_1autotoc_md2">
+<title>Core Principles</title>
+<para><orderedlist>
+<listitem>
+<para><emphasis role="bold">Circulation as Memory</emphasis><itemizedlist>
+<listitem>
+<para>Spending leaves an imprint. The past of your Chiffres influences their volatility.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem>
+<para><emphasis role="bold">GEMs as Catalysts</emphasis><itemizedlist>
+<listitem>
+<para>Linked to concrete actions (planting a tree, donating, collaborating).</para>
+</listitem><listitem>
+<para>Reduce losses or amplify gains in the cosmic gamble.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem>
+<para><emphasis role="bold">Temporal Cycles</emphasis><itemizedlist>
+<listitem>
+<para>Mutations follow natural rhythms.</para>
+</listitem><listitem>
+<para>At the winter solstice, great fortunes face monumental risks.</para>
+</listitem><listitem>
+<para>At equinoxes, the system seeks balance.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem>
+<para><emphasis role="bold">The Collective Ether</emphasis><itemizedlist>
+<listitem>
+<para>Gains “consume” the Ether (making Chiffres rarer, everyone benefits).</para>
+</listitem><listitem>
+<para>Losses “dissolve” into the Ether (making it thicker, everyone loses a bit).</para>
+</listitem><listitem>
+<para>When too many stagnate, value decreases → inciting action.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem>
+<para><emphasis role="bold">Symbolic Weights</emphasis><itemizedlist>
+<listitem>
+<para><emphasis role="bold">Light weights (small sums):</emphasis> wind, water – fast, playful, changeable.</para>
+</listitem><listitem>
+<para><emphasis role="bold">Heavy weights (large sums):</emphasis> earth, fire – slow, transformative, existential.</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem>
+<para><emphasis role="bold">Council of Chiffres (Governance)</emphasis><itemizedlist>
+<listitem>
+<para>Open assembly adjusting parameters (mutation frequency, Ether weights).</para>
+</listitem><listitem>
+<para>Decisions themselves are gambles – they may backfire if the Ether shifts.</para>
+</listitem></itemizedlist>
+</para>
+</listitem></orderedlist>
+</para>
+</section>
+<section xml:id="_md_README_1autotoc_md3">
+<title>Technical Overview</title>
+<para><itemizedlist>
+<listitem>
+<para><emphasis role="bold">Language:</emphasis> C++20</para>
+</listitem><listitem>
+<para><emphasis role="bold">Core:</emphasis> <computeroutput>Chiffres</computeroutput> (wallets that mutate) + <computeroutput>Ether</computeroutput> (collective field)</para>
+</listitem><listitem>
+<para><emphasis role="bold">States:</emphasis><itemizedlist>
+<listitem>
+<para><computeroutput>Circulation</computeroutput> (deterministic transactions)</para>
+</listitem><listitem>
+<para><computeroutput>Rest</computeroutput> (stochastic mutation via log-normal distribution)</para>
+</listitem></itemizedlist>
+</para>
+</listitem><listitem>
+<para><emphasis role="bold">Modifiers:</emphasis><itemizedlist>
+<listitem>
+<para><computeroutput>EthicsScore</computeroutput> → [-1, +1]</para>
+</listitem><listitem>
+<para><computeroutput>CyclePhase</computeroutput> → [0,1) annual phase</para>
+</listitem><listitem>
+<para><computeroutput>Memory</computeroutput> → volatility/stability biases</para>
+</listitem><listitem>
+<para><computeroutput>GEMs</computeroutput> (planned extension)</para>
+</listitem></itemizedlist>
+</para>
+</listitem></itemizedlist>
+</para>
+</section>
+<section xml:id="_md_README_1autotoc_md4">
+<title>Build &amp; Run</title>
+<para><literallayout><computeroutput>git&#32;clone&#32;https://github.com/chiffres/chiffres
+cd&#32;chiffres
+cmake&#32;-B&#32;build&#32;-DCMAKE_BUILD_TYPE=Release
+cmake&#32;--build&#32;build&#32;-j
+./build/chiffres_demo
+</computeroutput></literallayout></para>
+</section>
+<section xml:id="_md_README_1autotoc_md5">
+<title>Example</title>
+<para><literallayout><computeroutput>#include&#32;&lt;Chiffres.h&gt;
+#include&#32;&lt;iostream&gt;
+
+int&#32;main()&#32;{
+&#32;&#32;&#32;&#32;Chiffres&#32;wallet(1000.0);
+
+&#32;&#32;&#32;&#32;wallet.receive(200.0);&#32;&#32;//&#32;certainty
+&#32;&#32;&#32;&#32;wallet.spend(50.0);
+
+&#32;&#32;&#32;&#32;wallet.set_state(State::Rest);
+&#32;&#32;&#32;&#32;EthicsScore&#32;ethics{+0.6};&#32;//&#32;good&#32;actions
+&#32;&#32;&#32;&#32;CyclePhase&#32;cycle{0.0};&#32;&#32;&#32;&#32;//&#32;winter&#32;solstice
+
+&#32;&#32;&#32;&#32;double&#32;delta&#32;=&#32;wallet.mutate(ethics,&#32;cycle);
+&#32;&#32;&#32;&#32;std::cout&#32;&lt;&lt;&#32;&quot;Mutation:&#32;&quot;&#32;&lt;&lt;&#32;delta
+&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&lt;&lt;&#32;&quot;&#32;|&#32;Total:&#32;&quot;&#32;&lt;&lt;&#32;wallet.total()&#32;&lt;&lt;&#32;&quot;\n&quot;;
+}
+</computeroutput></literallayout></para>
+</section>
+<section xml:id="_md_README_1autotoc_md6">
+<title>Roadmap</title>
+<para><itemizedlist>
+<listitem>
+<para>[x] Core engine (<computeroutput>Circulation</computeroutput>, <computeroutput>Rest</computeroutput>, <computeroutput>Ether</computeroutput>, <computeroutput>Memory</computeroutput>)</para>
+</listitem><listitem>
+<para>[ ] GEMs / Catalysts</para>
+</listitem><listitem>
+<para>[ ] Temporal cycles (calendar integration)</para>
+</listitem><listitem>
+<para>[ ] Elemental Weights (linking fortunes to nature)</para>
+</listitem><listitem>
+<para>[ ] Council of Chiffres (governance layer)</para>
+</listitem><listitem>
+<para>[ ] Visualization / Simulation tools</para>
+</listitem></itemizedlist>
+</para>
+</section>
+<section xml:id="_md_README_1autotoc_md7">
+<title>License</title>
+<para>AGPL-3.0 – free to use, share, and improve. If you build upon Chiffres, share it back with the community </para>
+</section>
+</section>

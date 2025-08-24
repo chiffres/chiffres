@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structChiffre_1_1EthicsScore" xml:lang="en-US">
+<title>Chiffre::EthicsScore Struct Reference</title>
+<indexterm><primary>Chiffre::EthicsScore</primary></indexterm>
+<para>
+
+<para>Ethical score associated with an actor or portfolio. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;Chiffres.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_structChiffre_1_1EthicsScore_1aa115796ab4a9940bd4a4b23cf8639293"/>double <emphasis role="strong">score</emphasis> = 0.0</para>
+
+<para>&lt; Range expected in [-1.0, +1.0]. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Ethical score associated with an actor or portfolio. </para>
+
+
+
+<para>This influences volatility and drift during mutation:<itemizedlist>
+<listitem>
+<para>Positive values (towards +1) reduce variance and add slight positive drift.</para>
+</listitem><listitem>
+<para>Negative values (towards -1) increase variance and bias towards losses. </para>
+</listitem></itemizedlist>
+</para>
+<para>
+The documentation for this struct was generated from the following file:</para>
+Chiffres.h</section>
+</section>

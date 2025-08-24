@@ -1,0 +1,33 @@
+\doxysection{Chiffre\+::Memory Struct Reference}
+\hypertarget{structChiffre_1_1Memory}{}\label{structChiffre_1_1Memory}\index{Chiffre::Memory@{Chiffre::Memory}}
+
+
+\doxylink{structChiffre_1_1Memory}{Memory} of past wallet behavior.  
+
+
+
+
+{\ttfamily \#include $<$Chiffres.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structChiffre_1_1Memory_a6483e19169671e29f3ba89418c048976}\label{structChiffre_1_1Memory_a6483e19169671e29f3ba89418c048976} 
+double {\bfseries volatility\+\_\+bias} = 1.\+0
+\begin{DoxyCompactList}\small\item\em amplifies variance in future mutations. \end{DoxyCompactList}\item 
+\Hypertarget{structChiffre_1_1Memory_a98dfd64a393542a15dc2208e23697328}\label{structChiffre_1_1Memory_a98dfd64a393542a15dc2208e23697328} 
+double {\bfseries stability\+\_\+bias} = 1.\+0
+\begin{DoxyCompactList}\small\item\em damps shocks, makes mutations gentler. \end{DoxyCompactList}\item 
+\Hypertarget{structChiffre_1_1Memory_a76aeea396c98fe992af847da57c8f463}\label{structChiffre_1_1Memory_a76aeea396c98fe992af847da57c8f463} 
+std\+::uint64\+\_\+t {\bfseries events} = 0
+\begin{DoxyCompactList}\small\item\em counts the numbers of recorded events. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\doxylink{structChiffre_1_1Memory}{Memory} of past wallet behavior. 
+
+This structure accumulates a history of flows and mutations, and biases future stochastic dynamics\+: 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Chiffres.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structEthicsScore" xml:lang="en-US">
+<title>EthicsScore Struct Reference</title>
+<indexterm><primary>EthicsScore</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_structEthicsScore_1ac1ec0f9abeb997e93b24c94b8d3303db"/>double <emphasis role="strong">score</emphasis> = 0.0</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this struct was generated from the following file:</para>
+Chiffres.h</section>

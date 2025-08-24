@@ -1,0 +1,171 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_classChiffre_1_1Ether" xml:lang="en-US">
+<title>Chiffre::Ether Class Reference</title>
+<indexterm><primary>Chiffre::Ether</primary></indexterm>
+<para>
+
+<para>Collective monetary field in the <link linkend="_classChiffre_1_1Chiffres">Chiffres</link> system. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;Ether.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>double <link linkend="_classChiffre_1_1Ether_1a93c1f8ec13ab97ac36ffbd527535e788">density</link> () const noexcept</para>
+
+<para>Get current <link linkend="_classChiffre_1_1Ether">Ether</link> density. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classChiffre_1_1Ether_1ab9439f26b2e38745d364920ea9faf22d">consume</link> (double amount) noexcept</para>
+
+<para>Consume <link linkend="_classChiffre_1_1Ether">Ether</link> when a gain occurs. </para>
+</listitem>
+            <listitem><para>void <link linkend="_classChiffre_1_1Ether_1ae04009286f65254a37504d53c01d9bf3">dissolve</link> (double amount) noexcept</para>
+
+<para>Dissolve <link linkend="_classChiffre_1_1Ether">Ether</link> when a loss occurs. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<simplesect>
+    <title>Static Public Member Functions    </title>
+        <itemizedlist>
+            <listitem><para>static <link linkend="_classChiffre_1_1Ether">Ether</link> &amp; <link linkend="_classChiffre_1_1Ether_1a758b0712b71b4c59a79c19e1e9139622">instance</link> ()</para>
+
+<para>Access the unique global instance (Meyers&apos; singleton). </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Collective monetary field in the <link linkend="_classChiffre_1_1Chiffres">Chiffres</link> system. </para>
+
+
+
+<para><link linkend="_classChiffre_1_1Ether">Ether</link> represents the &quot;atmosphere&quot; of value shared by all <link linkend="_classChiffre_1_1Chiffres">Chiffres</link>. It reacts to individual gains and losses, and in turn influences the probability space of all future mutations.</para>
+
+<para>Core principles:<itemizedlist>
+<listitem>
+<para>When a wallet gains in rest, <link linkend="_classChiffre_1_1Ether">Ether</link> is &quot;consumed&quot; → density decreases, value of all <link linkend="_classChiffre_1_1Chiffres">Chiffres</link> increases slightly (rarer field).</para>
+</listitem><listitem>
+<para>When a wallet loses in rest, <link linkend="_classChiffre_1_1Ether">Ether</link> &quot;dissolves&quot; → density increases; The value of all <link linkend="_classChiffre_1_1Chiffres">Chiffres</link> decreases slightly (thicker field).</para>
+</listitem></itemizedlist>
+</para>
+
+<para><link linkend="_classChiffre_1_1Ether">Ether</link> acts as a global coupling mechanism: no mutation is purely individual. The system becomes organically self-regulating. </para>
+</section>
+<section>
+<title>Member Function Documentation</title>
+<anchor xml:id="_classChiffre_1_1Ether_1ab9439f26b2e38745d364920ea9faf22d"/><section>
+    <title>consume()</title>
+<indexterm><primary>consume</primary><secondary>Chiffre::Ether</secondary></indexterm>
+<indexterm><primary>Chiffre::Ether</primary><secondary>consume</secondary></indexterm>
+<para><computeroutput>void Ether::consume (double amount)<computeroutput>[noexcept]</computeroutput></computeroutput></para><para>
+
+<para>Consume <link linkend="_classChiffre_1_1Ether">Ether</link> when a gain occurs. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>amount</entry><entry>
+<para>Positive gain value (will be clamped).</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                Consuming reduces <link linkend="_classChiffre_1_1Ether">Ether</link> density, bounded by min_density.</para>
+
+<para>This makes <link linkend="_classChiffre_1_1Chiffres">Chiffres</link> globally scarcer → positive drift. </para>
+</section>
+<anchor xml:id="_classChiffre_1_1Ether_1a93c1f8ec13ab97ac36ffbd527535e788"/><section>
+    <title>density()</title>
+<indexterm><primary>density</primary><secondary>Chiffre::Ether</secondary></indexterm>
+<indexterm><primary>Chiffre::Ether</primary><secondary>density</secondary></indexterm>
+<para><computeroutput>double Ether::density ( ) const<computeroutput>[nodiscard]</computeroutput>, <computeroutput>[noexcept]</computeroutput></computeroutput></para><para>
+
+<para>Get current <link linkend="_classChiffre_1_1Ether">Ether</link> density. </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>Current density in [min_density, max_density].</para>
+</formalpara>
+<itemizedlist>
+<listitem>
+<para>1.0 is neutral density (baseline).</para>
+</listitem><listitem>
+<para>&lt;1.0 means <link linkend="_classChiffre_1_1Ether">Ether</link> has been consumed (rarer, boosting value).</para>
+</listitem><listitem>
+<para>&gt;1.0 means <link linkend="_classChiffre_1_1Ether">Ether</link> has thickened (abundant, reducing value). </para>
+</listitem></itemizedlist>
+</para>
+</section>
+<anchor xml:id="_classChiffre_1_1Ether_1ae04009286f65254a37504d53c01d9bf3"/><section>
+    <title>dissolve()</title>
+<indexterm><primary>dissolve</primary><secondary>Chiffre::Ether</secondary></indexterm>
+<indexterm><primary>Chiffre::Ether</primary><secondary>dissolve</secondary></indexterm>
+<para><computeroutput>void Ether::dissolve (double amount)<computeroutput>[noexcept]</computeroutput></computeroutput></para><para>
+
+<para>Dissolve <link linkend="_classChiffre_1_1Ether">Ether</link> when a loss occurs. </para>
+</para>
+
+<para>
+                <formalpara>
+                    <title>
+Parameters</title>
+                    <para>
+                    <table frame="all">
+                        <tgroup cols="2" align="left" colsep="1" rowsep="1">
+                        <colspec colwidth="1*"/>
+                        <colspec colwidth="4*"/>
+                        <tbody>
+                            <row>
+<entry>amount</entry><entry>
+<para>Positive loss value (will be clamped).</para>
+</entry>
+                            </row>
+                        </tbody>
+                        </tgroup>
+                    </table>
+                    </para>
+                </formalpara>
+                Dissolving increases <link linkend="_classChiffre_1_1Ether">Ether</link> density, bounded by max_density.</para>
+
+<para>This makes <link linkend="_classChiffre_1_1Chiffres">Chiffres</link> globally thicker → negative drift. </para>
+</section>
+<anchor xml:id="_classChiffre_1_1Ether_1a758b0712b71b4c59a79c19e1e9139622"/><section>
+    <title>instance()</title>
+<indexterm><primary>instance</primary><secondary>Chiffre::Ether</secondary></indexterm>
+<indexterm><primary>Chiffre::Ether</primary><secondary>instance</secondary></indexterm>
+<para><computeroutput><link linkend="_classChiffre_1_1Ether">Ether</link> &amp; Ether::instance ( )<computeroutput>[static]</computeroutput></computeroutput></para><para>
+
+<para>Access the unique global instance (Meyers&apos; singleton). </para>
+</para>
+
+<para><formalpara><title>Returns</title>
+
+<para>Reference to the <link linkend="_classChiffre_1_1Ether">Ether</link> instance.</para>
+</formalpara>
+<note><title>Note</title>
+
+<para><link linkend="_classChiffre_1_1Ether">Ether</link> is unique by design. All wallets share the same field. </para>
+</note>
+</para>
+</section>
+<para>
+The documentation for this class was generated from the following files:</para>
+Ether.hEther.cpp</section>
+</section>

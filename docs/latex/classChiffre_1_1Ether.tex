@@ -1,0 +1,115 @@
+\doxysection{Chiffre\+::Ether Class Reference}
+\hypertarget{classChiffre_1_1Ether}{}\label{classChiffre_1_1Ether}\index{Chiffre::Ether@{Chiffre::Ether}}
+
+
+Collective monetary field in the \doxylink{classChiffre_1_1Chiffres}{Chiffres} system.  
+
+
+
+
+{\ttfamily \#include $<$Ether.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classChiffre_1_1Ether_a93c1f8ec13ab97ac36ffbd527535e788}{density}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Get current \doxylink{classChiffre_1_1Ether}{Ether} density. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classChiffre_1_1Ether_ab9439f26b2e38745d364920ea9faf22d}{consume}} (double amount) noexcept
+\begin{DoxyCompactList}\small\item\em Consume \doxylink{classChiffre_1_1Ether}{Ether} when a gain occurs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classChiffre_1_1Ether_ae04009286f65254a37504d53c01d9bf3}{dissolve}} (double amount) noexcept
+\begin{DoxyCompactList}\small\item\em Dissolve \doxylink{classChiffre_1_1Ether}{Ether} when a loss occurs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classChiffre_1_1Ether}{Ether}} \& \mbox{\hyperlink{classChiffre_1_1Ether_a758b0712b71b4c59a79c19e1e9139622}{instance}} ()
+\begin{DoxyCompactList}\small\item\em Access the unique global instance (Meyers\textquotesingle{} singleton). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Collective monetary field in the \doxylink{classChiffre_1_1Chiffres}{Chiffres} system. 
+
+\doxylink{classChiffre_1_1Ether}{Ether} represents the "{}atmosphere"{} of value shared by all \doxylink{classChiffre_1_1Chiffres}{Chiffres}. It reacts to individual gains and losses, and in turn influences the probability space of all future mutations.
+
+Core principles\+:
+\begin{DoxyItemize}
+\item When a wallet gains in rest, \doxylink{classChiffre_1_1Ether}{Ether} is "{}consumed"{} → density decreases, value of all \doxylink{classChiffre_1_1Chiffres}{Chiffres} increases slightly (rarer field).
+\item When a wallet loses in rest, \doxylink{classChiffre_1_1Ether}{Ether} "{}dissolves"{} → density increases; The value of all \doxylink{classChiffre_1_1Chiffres}{Chiffres} decreases slightly (thicker field).
+\end{DoxyItemize}
+
+\doxylink{classChiffre_1_1Ether}{Ether} acts as a global coupling mechanism\+: no mutation is purely individual. The system becomes organically self-\/regulating. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classChiffre_1_1Ether_ab9439f26b2e38745d364920ea9faf22d}\index{Chiffre::Ether@{Chiffre::Ether}!consume@{consume}}
+\index{consume@{consume}!Chiffre::Ether@{Chiffre::Ether}}
+\doxysubsubsection{\texorpdfstring{consume()}{consume()}}
+{\footnotesize\ttfamily \label{classChiffre_1_1Ether_ab9439f26b2e38745d364920ea9faf22d} 
+void Ether\+::consume (\begin{DoxyParamCaption}\item[{double}]{amount}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Consume \doxylink{classChiffre_1_1Ether}{Ether} when a gain occurs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & Positive gain value (will be clamped).\\
+\hline
+\end{DoxyParams}
+Consuming reduces \doxylink{classChiffre_1_1Ether}{Ether} density, bounded by min\+\_\+density.
+
+This makes \doxylink{classChiffre_1_1Chiffres}{Chiffres} globally scarcer → positive drift. \Hypertarget{classChiffre_1_1Ether_a93c1f8ec13ab97ac36ffbd527535e788}\index{Chiffre::Ether@{Chiffre::Ether}!density@{density}}
+\index{density@{density}!Chiffre::Ether@{Chiffre::Ether}}
+\doxysubsubsection{\texorpdfstring{density()}{density()}}
+{\footnotesize\ttfamily \label{classChiffre_1_1Ether_a93c1f8ec13ab97ac36ffbd527535e788} 
+double Ether\+::density (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [noexcept]}}
+
+
+
+Get current \doxylink{classChiffre_1_1Ether}{Ether} density. 
+
+\begin{DoxyReturn}{Returns}
+Current density in \mbox{[}min\+\_\+density, max\+\_\+density\mbox{]}.
+\end{DoxyReturn}
+
+\begin{DoxyItemize}
+\item 1.\+0 is neutral density (baseline).
+\item \texorpdfstring{$<$}{<}1.\+0 means \doxylink{classChiffre_1_1Ether}{Ether} has been consumed (rarer, boosting value).
+\item \texorpdfstring{$>$}{>}1.\+0 means \doxylink{classChiffre_1_1Ether}{Ether} has thickened (abundant, reducing value). 
+\end{DoxyItemize}\Hypertarget{classChiffre_1_1Ether_ae04009286f65254a37504d53c01d9bf3}\index{Chiffre::Ether@{Chiffre::Ether}!dissolve@{dissolve}}
+\index{dissolve@{dissolve}!Chiffre::Ether@{Chiffre::Ether}}
+\doxysubsubsection{\texorpdfstring{dissolve()}{dissolve()}}
+{\footnotesize\ttfamily \label{classChiffre_1_1Ether_ae04009286f65254a37504d53c01d9bf3} 
+void Ether\+::dissolve (\begin{DoxyParamCaption}\item[{double}]{amount}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Dissolve \doxylink{classChiffre_1_1Ether}{Ether} when a loss occurs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & Positive loss value (will be clamped).\\
+\hline
+\end{DoxyParams}
+Dissolving increases \doxylink{classChiffre_1_1Ether}{Ether} density, bounded by max\+\_\+density.
+
+This makes \doxylink{classChiffre_1_1Chiffres}{Chiffres} globally thicker → negative drift. \Hypertarget{classChiffre_1_1Ether_a758b0712b71b4c59a79c19e1e9139622}\index{Chiffre::Ether@{Chiffre::Ether}!instance@{instance}}
+\index{instance@{instance}!Chiffre::Ether@{Chiffre::Ether}}
+\doxysubsubsection{\texorpdfstring{instance()}{instance()}}
+{\footnotesize\ttfamily \label{classChiffre_1_1Ether_a758b0712b71b4c59a79c19e1e9139622} 
+\mbox{\hyperlink{classChiffre_1_1Ether}{Ether}} \& Ether\+::instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Access the unique global instance (Meyers\textquotesingle{} singleton). 
+
+\begin{DoxyReturn}{Returns}
+Reference to the \doxylink{classChiffre_1_1Ether}{Ether} instance.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+\doxylink{classChiffre_1_1Ether}{Ether} is unique by design. All wallets share the same field. 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Ether.\+h\item 
+Ether.\+cpp\end{DoxyCompactItemize}

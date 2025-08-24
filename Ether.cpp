@@ -1,5 +1,7 @@
 #include "Ether.h"
 
+using namespace Chiffre;
+
 Ether &Ether::instance() {
     static Ether instance;
     return instance;

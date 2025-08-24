@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structCyclePhase" xml:lang="en-US">
+<title>CyclePhase Struct Reference</title>
+<indexterm><primary>CyclePhase</primary></indexterm>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_structCyclePhase_1a7732c4d704c82a37115d4534ee76b73f"/>double <emphasis role="strong">phase</emphasis> = 0.0</para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<para>
+The documentation for this struct was generated from the following file:</para>
+Chiffres.h</section>

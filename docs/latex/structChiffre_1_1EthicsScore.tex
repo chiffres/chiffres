@@ -1,0 +1,31 @@
+\doxysection{Chiffre\+::Ethics\+Score Struct Reference}
+\hypertarget{structChiffre_1_1EthicsScore}{}\label{structChiffre_1_1EthicsScore}\index{Chiffre::EthicsScore@{Chiffre::EthicsScore}}
+
+
+Ethical score associated with an actor or portfolio.  
+
+
+
+
+{\ttfamily \#include $<$Chiffres.\+h$>$}
+
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{structChiffre_1_1EthicsScore_aa115796ab4a9940bd4a4b23cf8639293}\label{structChiffre_1_1EthicsScore_aa115796ab4a9940bd4a4b23cf8639293} 
+double {\bfseries score} = 0.\+0
+\begin{DoxyCompactList}\small\item\em \texorpdfstring{$<$}{<} Range expected in \mbox{[}-\/1.\+0, +1.\+0\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Ethical score associated with an actor or portfolio. 
+
+This influences volatility and drift during mutation\+:
+\begin{DoxyItemize}
+\item Positive values (towards +1) reduce variance and add slight positive drift.
+\item Negative values (towards -\/1) increase variance and bias towards losses. 
+\end{DoxyItemize}
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Chiffres.\+h\end{DoxyCompactItemize}
