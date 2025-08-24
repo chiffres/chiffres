@@ -1,33 +1,107 @@
-1. Give Circulation a More Active Role
-Currently, you define two states circulation (certainty) and rest (a gamble). We could imagine that the mode of circulation influences the currency:
- * Spending on a local good → increases the "stability" of the Chiffres (they mutate less quickly if they return to the bank).
- * Spending on a risky project (startup, speculation) → increases their future volatility.
-Thus, the currency remembers how it has circulated.
-2. Introduce GEMs or Catalyst. Here, they could become probability modifiers in the casino:
- * Holding GEMs can reduce the magnitude of a loss, or conversely, multiply a gain.
- * GEMs can be linked to concrete actions (planting a tree, donating to a charity, participating in a project).
-   → This links the currency to ethics and ecology, not by force, but by creating a subtle incentive.
-3. Add a Temporal Dimension
-We could introduce a cycle of time:
- * Mutations are not uniform but follow rhythms (days, seasons, years).
- * Example: At the winter solstice, large fortunes risk a stronger mutation (a symbol of passing through darkness).
-This makes the system more mythical and gives the economy a ritualistic aspect.
-4. Link the Monetary Ether to Collective Actions
-Currently, the Ether is passive. We could make it interactive:
- * When too many people stagnate, the Ether thickens, and the overall value decreases → this incites everyone to restart circulation.
- * When everyone is spending, the Ether becomes scarcer, increasing the value → this encourages a bit of saving.
-   → This creates an organic self-regulation.
-5. Give a Symbolic Role to the "Weights"
-The Weights (light or heavy) could be more than just a matter of size:
- * Light Weights: assimilated to wind, water → fast, changing.
- * Heavy Weights: assimilated to earth, fire → massive, transformative.
-   → We could make each fortune correspond to a natural element, adding a cosmological dimension.
-6. Integrated Governance
-To prevent the system from being seen as pure "chance," we could introduce a Council of Chiffres:
- * Not a central bank, but an open assembly that adjusts certain parameters (frequency of mutations, weight of the Ether).
- * Their decisions are themselves subject to gambles! (e.g., a decision can backfire on them if the Ether evolves poorly).
+# Chiffres – A Sentient Economic System
 
-In summary, you could enrich the theory in three directions:
- * Memorization: The Chiffres remember how they have circulated.
- * Ethics/Ecology: Via GEMs, concrete actions modify the probabilities.
- * Mythology & Cycles: Linking mutations to seasons, elements, or a universal symbolism.
+> *“Value is alive. Certain in circulation, mutable at rest.
+> A cosmic gamble influenced by ethics, cycles, and collective memory.”*
+
+##  Vision
+
+**Chiffres** is not just a currency – it is a **living system**.
+Unlike traditional money (stable when hoarded, inert when circulating), Chiffres reverses the paradigm:
+
+* **Circulation = Certainty**
+  When you spend or receive, the value is exact. 100 Chiffres spent = 100 Chiffres received.
+  But *how* you spend matters:
+
+   * **Local good** → stabilizes your Chiffres.
+   * **Risky project** → makes them more volatile in the future.
+     Thus, the currency **remembers how it has circulated**.
+
+* **Rest = Gamble**
+  When hoarded, Chiffres enter a quantum-like state.
+  Their value mutates unpredictably according to:
+
+   * **Ethics / GEMs** (virtuous actions stabilize, destructive ones destabilize).
+   * **Cycles of Time** (solstices, seasons, years).
+   * **Weights / Elements** (small fortunes = wind/water, large fortunes = earth/fire).
+   * **Collective Ether** (if many stagnate, all are dragged down; if all circulate, everyone rises).
+
+## Core Principles
+
+1. **Circulation as Memory**
+   * Spending leaves an imprint. The past of your Chiffres influences their volatility.
+2. **GEMs as Catalysts**
+   * Linked to concrete actions (planting a tree, donating, collaborating).
+   * Reduce losses or amplify gains in the cosmic gamble.
+3. **Temporal Cycles**
+   * Mutations follow natural rhythms.
+   * At the winter solstice, great fortunes face monumental risks.
+   * At equinoxes, the system seeks balance.
+4. **The Collective Ether**
+   * Gains “consume” the Ether (making Chiffres rarer, everyone benefits).
+   * Losses “dissolve” into the Ether (making it thicker, everyone loses a bit).
+   * When too many stagnate, value decreases → inciting action.
+5. **Symbolic Weights**
+   * **Light weights (small sums):** wind, water – fast, playful, changeable.
+   * **Heavy weights (large sums):** earth, fire – slow, transformative, existential.
+6. **Council of Chiffres (Governance)**
+   * Open assembly adjusting parameters (mutation frequency, Ether weights).
+   * Decisions themselves are gambles – they may backfire if the Ether shifts.
+
+## Technical Overview
+
+* **Language:** C++20
+* **Core:** `Chiffres` (wallets that mutate) + `Ether` (collective field)
+* **States:**
+   * `Circulation` (deterministic transactions)
+   * `Rest` (stochastic mutation via log-normal distribution)
+* **Modifiers:**
+   * `EthicsScore` → \[-1, +1]
+   * `CyclePhase` → \[0,1) annual phase
+   * `Memory` → volatility/stability biases
+   * `GEMs` (planned extension)
+
+## Build & Run
+
+```bash
+git clone https://github.com/chiffres/chiffres
+cd chiffres
+cmake -B build -DCMAKE_BUILD_TYPE=Release
+cmake --build build -j
+./build/chiffres_demo
+```
+
+## Example
+
+```cpp
+#include <Chiffres.h>
+#include <iostream>
+
+int main() {
+    Chiffres wallet(1000.0);
+
+    wallet.receive(200.0);  // certainty
+    wallet.spend(50.0);
+
+    wallet.set_state(State::Rest);
+    EthicsScore ethics{+0.6}; // good actions
+    CyclePhase cycle{0.0};    // winter solstice
+
+    double delta = wallet.mutate(ethics, cycle);
+    std::cout << "Mutation: " << delta
+              << " | Total: " << wallet.total() << "\n";
+}
+```
+
+## Roadmap
+
+* [x] Core engine (`Circulation`, `Rest`, `Ether`, `Memory`)
+* [ ] GEMs / Catalysts
+* [ ] Temporal cycles (calendar integration)
+* [ ] Elemental Weights (linking fortunes to nature)
+* [ ] Council of Chiffres (governance layer)
+* [ ] Visualization / Simulation tools
+
+## License
+
+AGPL-3.0 – free to use, share, and improve.
+If you build upon Chiffres, share it back with the community
