@@ -8,6 +8,8 @@
 <para><blockquote>
 <para><emphasis>“Value is alive. Certain in circulation, mutable at rest. A cosmic gamble influenced by ethics, cycles, and collective memory.”</emphasis> </para>
 </blockquote></para>
+
+<para><link xlink:href="https://chiffres.github.io/chiffres/">documentation</link></para>
 <section xml:id="_md_README_1autotoc_md1">
 <title>Vision</title>
 <para><emphasis role="bold">Chiffres</emphasis> is not just a currency – it is a <emphasis role="bold">living system</emphasis>. Unlike traditional money (stable when hoarded, inert when circulating), Chiffres reverses the paradigm:</para>
@@ -70,7 +72,7 @@
 </listitem><listitem>
 <para>Losses “dissolve” into the Ether (making it thicker, everyone loses a bit).</para>
 </listitem><listitem>
-<para>When too many stagnate, value decreases → inciting action.</para>
+<para>When too many stagnate, the value decreases → inciting action.</para>
 </listitem></itemizedlist>
 </para>
 </listitem><listitem>
@@ -172,6 +174,8 @@ int&#32;main()&#32;{
 </section>
 <section xml:id="_md_README_1autotoc_md7">
 <title>License</title>
-<para>AGPL-3.0 – free to use, share, and improve. If you build upon Chiffres, share it back with the community </para>
+<para>AGPL-3.0 – free to use, share, and improve.</para>
+
+<para>If you build upon Chiffres, share it back with the community </para>
 </section>
 </section>
