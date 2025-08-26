@@ -1,0 +1,117 @@
+\doxysection{Chiffres\+::Ether Class Reference}
+\hypertarget{classChiffres_1_1Ether}{}\label{classChiffres_1_1Ether}\index{Chiffres::Ether@{Chiffres::Ether}}
+
+
+Collective monetary field in the Chiffres system.  
+
+
+
+
+{\ttfamily \#include $<$Ether.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classChiffres_1_1Ether_a93c1f8ec13ab97ac36ffbd527535e788}{density}} () const noexcept
+\begin{DoxyCompactList}\small\item\em Get current \doxylink{classChiffres_1_1Ether}{Ether} density. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classChiffres_1_1Ether_ab9439f26b2e38745d364920ea9faf22d}{consume}} (double amount) noexcept
+\begin{DoxyCompactList}\small\item\em Consume \doxylink{classChiffres_1_1Ether}{Ether} when a gain occurs. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classChiffres_1_1Ether_ae04009286f65254a37504d53c01d9bf3}{dissolve}} (double amount) noexcept
+\begin{DoxyCompactList}\small\item\em Dissolve \doxylink{classChiffres_1_1Ether}{Ether} when a loss occurs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{classChiffres_1_1Ether}{Ether}} \& \mbox{\hyperlink{classChiffres_1_1Ether_a758b0712b71b4c59a79c19e1e9139622}{instance}} ()
+\begin{DoxyCompactList}\small\item\em Access the unique global instance (Meyers\textquotesingle{} singleton). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Collective monetary field in the Chiffres system. 
+
+\doxylink{classChiffres_1_1Ether}{Ether} represents the "{}atmosphere"{} of value shared by all Chiffres. It reacts to individual gains and losses, and in turn influences the probability space of all future mutations.
+
+Core principles\+:
+\begin{DoxyItemize}
+\item When a wallet gains in rest, \doxylink{classChiffres_1_1Ether}{Ether} is "{}consumed"{} → density decreases, value of all Chiffres increases slightly (rarer field).
+\item When a wallet loses in rest, \doxylink{classChiffres_1_1Ether}{Ether} "{}dissolves"{} → density increases; The value of all Chiffres decreases slightly (thicker field).
+\end{DoxyItemize}
+
+\doxylink{classChiffres_1_1Ether}{Ether} acts as a global coupling mechanism\+: no mutation is purely individual. The system becomes organically self-\/regulating. 
+
+\label{doc-func-members}
+\Hypertarget{classChiffres_1_1Ether_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classChiffres_1_1Ether_ab9439f26b2e38745d364920ea9faf22d}\index{Chiffres::Ether@{Chiffres::Ether}!consume@{consume}}
+\index{consume@{consume}!Chiffres::Ether@{Chiffres::Ether}}
+\doxysubsubsection{\texorpdfstring{consume()}{consume()}}
+{\footnotesize\ttfamily \label{classChiffres_1_1Ether_ab9439f26b2e38745d364920ea9faf22d} 
+void Ether\+::consume (\begin{DoxyParamCaption}\item[{double}]{amount}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Consume \doxylink{classChiffres_1_1Ether}{Ether} when a gain occurs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & Positive gain value (will be clamped).\\
+\hline
+\end{DoxyParams}
+Consuming reduces \doxylink{classChiffres_1_1Ether}{Ether} density, bounded by min\+\_\+density.
+
+This makes Chiffres globally scarcer → positive drift. \Hypertarget{classChiffres_1_1Ether_a93c1f8ec13ab97ac36ffbd527535e788}\index{Chiffres::Ether@{Chiffres::Ether}!density@{density}}
+\index{density@{density}!Chiffres::Ether@{Chiffres::Ether}}
+\doxysubsubsection{\texorpdfstring{density()}{density()}}
+{\footnotesize\ttfamily \label{classChiffres_1_1Ether_a93c1f8ec13ab97ac36ffbd527535e788} 
+double Ether\+::density (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [nodiscard]}, {\ttfamily [noexcept]}}
+
+
+
+Get current \doxylink{classChiffres_1_1Ether}{Ether} density. 
+
+\begin{DoxyReturn}{Returns}
+Current density in \mbox{[}min\+\_\+density, max\+\_\+density\mbox{]}.
+\end{DoxyReturn}
+
+\begin{DoxyItemize}
+\item 1.\+0 is neutral density (baseline).
+\item \texorpdfstring{$<$}{<}1.\+0 means \doxylink{classChiffres_1_1Ether}{Ether} has been consumed (rarer, boosting value).
+\item \texorpdfstring{$>$}{>}1.\+0 means \doxylink{classChiffres_1_1Ether}{Ether} has thickened (abundant, reducing value). 
+\end{DoxyItemize}\Hypertarget{classChiffres_1_1Ether_ae04009286f65254a37504d53c01d9bf3}\index{Chiffres::Ether@{Chiffres::Ether}!dissolve@{dissolve}}
+\index{dissolve@{dissolve}!Chiffres::Ether@{Chiffres::Ether}}
+\doxysubsubsection{\texorpdfstring{dissolve()}{dissolve()}}
+{\footnotesize\ttfamily \label{classChiffres_1_1Ether_ae04009286f65254a37504d53c01d9bf3} 
+void Ether\+::dissolve (\begin{DoxyParamCaption}\item[{double}]{amount}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [noexcept]}}
+
+
+
+Dissolve \doxylink{classChiffres_1_1Ether}{Ether} when a loss occurs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & Positive loss value (will be clamped).\\
+\hline
+\end{DoxyParams}
+Dissolving increases \doxylink{classChiffres_1_1Ether}{Ether} density, bounded by max\+\_\+density.
+
+This makes Chiffres globally thicker → negative drift. \Hypertarget{classChiffres_1_1Ether_a758b0712b71b4c59a79c19e1e9139622}\index{Chiffres::Ether@{Chiffres::Ether}!instance@{instance}}
+\index{instance@{instance}!Chiffres::Ether@{Chiffres::Ether}}
+\doxysubsubsection{\texorpdfstring{instance()}{instance()}}
+{\footnotesize\ttfamily \label{classChiffres_1_1Ether_a758b0712b71b4c59a79c19e1e9139622} 
+\mbox{\hyperlink{classChiffres_1_1Ether}{Ether}} \& Ether\+::instance (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Access the unique global instance (Meyers\textquotesingle{} singleton). 
+
+\begin{DoxyReturn}{Returns}
+Reference to the \doxylink{classChiffres_1_1Ether}{Ether} instance.
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+\doxylink{classChiffres_1_1Ether}{Ether} is unique by design. All wallets share the same field. 
+\end{DoxyNote}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Ether.\+h\item 
+Ether.\+cpp\end{DoxyCompactItemize}

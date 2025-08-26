@@ -1,0 +1,178 @@
+\doxysection{Chiffres\+::Chiffre Class Reference}
+\hypertarget{classChiffres_1_1Chiffre}{}\label{classChiffres_1_1Chiffre}\index{Chiffres::Chiffre@{Chiffres::Chiffre}}
+
+
+Core abstraction of the Chiffres monetary system.  
+
+
+
+
+{\ttfamily \#include $<$Chiffre.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classChiffres_1_1Chiffre_a4e7fe70f5d87cc472d9951351c660ca1}{Chiffre}} (double initial=0.\+0)
+\begin{DoxyCompactList}\small\item\em Construct a wallet with an initial amount. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classChiffres_1_1Chiffre_af31b6e2a8342531fd5158168ba6d7669}{spend}} (double amount)
+\begin{DoxyCompactList}\small\item\em Spend from the wallet (deterministic). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classChiffres_1_1Chiffre_ae5471e24d6ee4551dc1214ab5ffa09fd}{receive}} (double amount)
+\begin{DoxyCompactList}\small\item\em Receive into the wallet (deterministic). \end{DoxyCompactList}\item 
+double \mbox{\hyperlink{classChiffres_1_1Chiffre_af0f6b25c5b4f0432bdc515153cb2d537}{mutate}} (const \mbox{\hyperlink{structChiffres_1_1EthicsScore}{Ethics\+Score}} \&ethics, const \mbox{\hyperlink{structChiffres_1_1CyclePhase}{Cycle\+Phase}} \&cycle)
+\begin{DoxyCompactList}\small\item\em Trigger a mutation when the wallet is at rest. \end{DoxyCompactList}\item 
+\Hypertarget{classChiffres_1_1Chiffre_a9c7514bc00181101f8238423bc99c543}\label{classChiffres_1_1Chiffre_a9c7514bc00181101f8238423bc99c543} 
+void {\bfseries set\+\_\+state} (State \mbox{\hyperlink{classChiffres_1_1Chiffre_ad8e6fe2301ae00e0baaeb37ffcb43770}{state}}) noexcept
+\begin{DoxyCompactList}\small\item\em Set the current wallet state (Circulation or Rest). \end{DoxyCompactList}\item 
+\Hypertarget{classChiffres_1_1Chiffre_ad8e6fe2301ae00e0baaeb37ffcb43770}\label{classChiffres_1_1Chiffre_ad8e6fe2301ae00e0baaeb37ffcb43770} 
+State {\bfseries state} () const noexcept
+\begin{DoxyCompactList}\small\item\em Get current state. \end{DoxyCompactList}\item 
+\Hypertarget{classChiffres_1_1Chiffre_aa80436dfacfa13618045e60281e454b2}\label{classChiffres_1_1Chiffre_aa80436dfacfa13618045e60281e454b2} 
+double {\bfseries total} () const noexcept
+\begin{DoxyCompactList}\small\item\em Get current balance. \end{DoxyCompactList}\item 
+\Hypertarget{classChiffres_1_1Chiffre_a5f42ad78be6ca6f83a0fa96122b22402}\label{classChiffres_1_1Chiffre_a5f42ad78be6ca6f83a0fa96122b22402} 
+const \mbox{\hyperlink{structChiffres_1_1Memory}{Memory}} \& {\bfseries memory} () const noexcept
+\begin{DoxyCompactList}\small\item\em Access memory snapshot (read-\/only). \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classChiffres_1_1Chiffre_adfc3d797ea07881e06b4743253ab6383}{record\+\_\+flow}} (double amount, bool incoming)
+\begin{DoxyCompactList}\small\item\em Record a deterministic flow (called internally by spend/receive). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Core abstraction of the Chiffres monetary system. 
+
+A Chiffres wallet is a living value container with two fundamental modes\+:
+\begin{DoxyItemize}
+\item In circulation, transactions are exact and deterministic.
+\item At rest, the value undergoes probabilistic mutations governed by\+:
+\begin{DoxyItemize}
+\item Ethical influence (\doxylink{structChiffres_1_1EthicsScore}{Ethics\+Score})
+\item Natural cycles (\doxylink{structChiffres_1_1CyclePhase}{Cycle\+Phase})
+\item Collective field feedback (\doxylink{classChiffres_1_1Ether}{Ether})
+\item Its own memory of past behaviors (\doxylink{structChiffres_1_1Memory}{Memory})
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+The class encapsulates both deterministic accounting and stochastic dynamics. 
+
+\label{doc-constructors}
+\Hypertarget{classChiffres_1_1Chiffre_doc-constructors}
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classChiffres_1_1Chiffre_a4e7fe70f5d87cc472d9951351c660ca1}\index{Chiffres::Chiffre@{Chiffres::Chiffre}!Chiffre@{Chiffre}}
+\index{Chiffre@{Chiffre}!Chiffres::Chiffre@{Chiffres::Chiffre}}
+\doxysubsubsection{\texorpdfstring{Chiffre()}{Chiffre()}}
+{\footnotesize\ttfamily \label{classChiffres_1_1Chiffre_a4e7fe70f5d87cc472d9951351c660ca1} 
+Chiffre\+::\+Chiffre (\begin{DoxyParamCaption}\item[{double}]{initial}{ = {\ttfamily 0.0}}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct a wallet with an initial amount. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em initial} & Starting balance. \\
+\hline
+\end{DoxyParams}
+
+
+\label{doc-func-members}
+\Hypertarget{classChiffres_1_1Chiffre_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classChiffres_1_1Chiffre_af0f6b25c5b4f0432bdc515153cb2d537}\index{Chiffres::Chiffre@{Chiffres::Chiffre}!mutate@{mutate}}
+\index{mutate@{mutate}!Chiffres::Chiffre@{Chiffres::Chiffre}}
+\doxysubsubsection{\texorpdfstring{mutate()}{mutate()}}
+{\footnotesize\ttfamily \label{classChiffres_1_1Chiffre_af0f6b25c5b4f0432bdc515153cb2d537} 
+double Chiffre\+::mutate (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structChiffres_1_1EthicsScore}{Ethics\+Score}} \&}]{ethics}{, }\item[{const \mbox{\hyperlink{structChiffres_1_1CyclePhase}{Cycle\+Phase}} \&}]{cycle}{}\end{DoxyParamCaption})}
+
+
+
+Trigger a mutation when the wallet is at rest. 
+
+Applies a stochastic multiplicative factor to the current balance. The distribution is log-\/normal and influenced by\+:
+\begin{DoxyItemize}
+\item \doxylink{structChiffres_1_1EthicsScore}{Ethics\+Score} (stability/destabilization, drift bias)
+\item \doxylink{structChiffres_1_1CyclePhase}{Cycle\+Phase} (time-\/based variance modulation)
+\item \doxylink{structChiffres_1_1Memory}{Memory} (feedback from past events)
+\item \doxylink{classChiffres_1_1Ether}{Ether} (collective field density, self-\/regulation)
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em ethics} & Ethical score of the actor. \\
+\hline
+{\em cycle} & Position within the cycle of time/nature. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The delta applied to the balance (positive = gain, negative = loss).
+\end{DoxyReturn}
+\begin{DoxyNote}{Note}
+If the wallet is not in State\+::\+Rest, returns 0.\+0 and does nothing. 
+\end{DoxyNote}
+\Hypertarget{classChiffres_1_1Chiffre_ae5471e24d6ee4551dc1214ab5ffa09fd}\index{Chiffres::Chiffre@{Chiffres::Chiffre}!receive@{receive}}
+\index{receive@{receive}!Chiffres::Chiffre@{Chiffres::Chiffre}}
+\doxysubsubsection{\texorpdfstring{receive()}{receive()}}
+{\footnotesize\ttfamily \label{classChiffres_1_1Chiffre_ae5471e24d6ee4551dc1214ab5ffa09fd} 
+void Chiffre\+::receive (\begin{DoxyParamCaption}\item[{double}]{amount}{}\end{DoxyParamCaption})}
+
+
+
+Receive into the wallet (deterministic). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & Positive amount to add.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if amount \texorpdfstring{$<$}{<} 0. \\
+\hline
+\end{DoxyExceptions}
+\Hypertarget{classChiffres_1_1Chiffre_adfc3d797ea07881e06b4743253ab6383}\index{Chiffres::Chiffre@{Chiffres::Chiffre}!record\_flow@{record\_flow}}
+\index{record\_flow@{record\_flow}!Chiffres::Chiffre@{Chiffres::Chiffre}}
+\doxysubsubsection{\texorpdfstring{record\_flow()}{record\_flow()}}
+{\footnotesize\ttfamily \label{classChiffres_1_1Chiffre_adfc3d797ea07881e06b4743253ab6383} 
+void Chiffre\+::record\+\_\+flow (\begin{DoxyParamCaption}\item[{double}]{amount}{, }\item[{bool}]{incoming}{}\end{DoxyParamCaption})}
+
+
+
+Record a deterministic flow (called internally by spend/receive). 
+
+Updates memory biases depending on\+:
+\begin{DoxyItemize}
+\item The direction of the flow (incoming/outgoing).
+\item The magnitude of the transaction.
+\end{DoxyItemize}
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & Absolute amount of the flow. \\
+\hline
+{\em incoming} & True if it is an incoming transaction. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classChiffres_1_1Chiffre_af31b6e2a8342531fd5158168ba6d7669}\index{Chiffres::Chiffre@{Chiffres::Chiffre}!spend@{spend}}
+\index{spend@{spend}!Chiffres::Chiffre@{Chiffres::Chiffre}}
+\doxysubsubsection{\texorpdfstring{spend()}{spend()}}
+{\footnotesize\ttfamily \label{classChiffres_1_1Chiffre_af31b6e2a8342531fd5158168ba6d7669} 
+void Chiffre\+::spend (\begin{DoxyParamCaption}\item[{double}]{amount}{}\end{DoxyParamCaption})}
+
+
+
+Spend from the wallet (deterministic). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em amount} & Positive amount to subtract.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::invalid\+\_\+argument} & if amount \texorpdfstring{$<$}{<} 0. \\
+\hline
+\end{DoxyExceptions}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Chiffre.\+h\item 
+Chiffre.\+cpp\end{DoxyCompactItemize}

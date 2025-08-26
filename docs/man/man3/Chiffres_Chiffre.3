@@ -1,0 +1,177 @@
+.TH "Chiffres::Chiffre" 3 "Chiffres" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Chiffres::Chiffre \- Core abstraction of the Chiffres monetary system\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <Chiffre\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBChiffre\fP (double initial=0\&.0)"
+.br
+.RI "Construct a wallet with an initial amount\&. "
+.ti -1c
+.RI "void \fBspend\fP (double amount)"
+.br
+.RI "Spend from the wallet (deterministic)\&. "
+.ti -1c
+.RI "void \fBreceive\fP (double amount)"
+.br
+.RI "Receive into the wallet (deterministic)\&. "
+.ti -1c
+.RI "double \fBmutate\fP (const \fBEthicsScore\fP &ethics, const \fBCyclePhase\fP &cycle)"
+.br
+.RI "Trigger a mutation when the wallet is at rest\&. "
+.ti -1c
+.RI "void \fBset_state\fP (State \fBstate\fP) noexcept"
+.br
+.RI "Set the current wallet state (Circulation or Rest)\&. "
+.ti -1c
+.RI "State \fBstate\fP () const noexcept"
+.br
+.RI "Get current state\&. "
+.ti -1c
+.RI "double \fBtotal\fP () const noexcept"
+.br
+.RI "Get current balance\&. "
+.ti -1c
+.RI "const \fBMemory\fP & \fBmemory\fP () const noexcept"
+.br
+.RI "Access memory snapshot (read-only)\&. "
+.ti -1c
+.RI "void \fBrecord_flow\fP (double amount, bool incoming)"
+.br
+.RI "Record a deterministic flow (called internally by spend/receive)\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Core abstraction of the Chiffres monetary system\&. 
+
+A Chiffres wallet is a living value container with two fundamental modes:
+.IP "\(bu" 2
+In circulation, transactions are exact and deterministic\&.
+.IP "\(bu" 2
+At rest, the value undergoes probabilistic mutations governed by:
+.IP "  \(bu" 4
+Ethical influence (\fBEthicsScore\fP)
+.IP "  \(bu" 4
+Natural cycles (\fBCyclePhase\fP)
+.IP "  \(bu" 4
+Collective field feedback (\fBEther\fP)
+.IP "  \(bu" 4
+Its own memory of past behaviors (\fBMemory\fP)
+.PP
+
+.PP
+
+.PP
+The class encapsulates both deterministic accounting and stochastic dynamics\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Chiffre::Chiffre (double initial = \fR0\&.0\fP)\fR [explicit]\fP"
+
+.PP
+Construct a wallet with an initial amount\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIinitial\fP Starting balance\&. 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "double Chiffre::mutate (const \fBEthicsScore\fP & ethics, const \fBCyclePhase\fP & cycle)"
+
+.PP
+Trigger a mutation when the wallet is at rest\&. Applies a stochastic multiplicative factor to the current balance\&. The distribution is log-normal and influenced by:
+.IP "\(bu" 2
+\fBEthicsScore\fP (stability/destabilization, drift bias)
+.IP "\(bu" 2
+\fBCyclePhase\fP (time-based variance modulation)
+.IP "\(bu" 2
+\fBMemory\fP (feedback from past events)
+.IP "\(bu" 2
+\fBEther\fP (collective field density, self-regulation)
+.PP
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIethics\fP Ethical score of the actor\&. 
+.br
+\fIcycle\fP Position within the cycle of time/nature\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The delta applied to the balance (positive = gain, negative = loss)\&.
+.RE
+.PP
+\fBNote\fP
+.RS 4
+If the wallet is not in State::Rest, returns 0\&.0 and does nothing\&. 
+.RE
+.PP
+
+.SS "void Chiffre::receive (double amount)"
+
+.PP
+Receive into the wallet (deterministic)\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIamount\fP Positive amount to add\&.
+.RE
+.PP
+\fBExceptions\fP
+.RS 4
+\fIstd::invalid_argument\fP if amount < 0\&. 
+.RE
+.PP
+
+.SS "void Chiffre::record_flow (double amount, bool incoming)"
+
+.PP
+Record a deterministic flow (called internally by spend/receive)\&. Updates memory biases depending on:
+.IP "\(bu" 2
+The direction of the flow (incoming/outgoing)\&.
+.IP "\(bu" 2
+The magnitude of the transaction\&.
+.PP
+
+.PP
+\fBParameters\fP
+.RS 4
+\fIamount\fP Absolute amount of the flow\&. 
+.br
+\fIincoming\fP True if it is an incoming transaction\&. 
+.RE
+.PP
+
+.SS "void Chiffre::spend (double amount)"
+
+.PP
+Spend from the wallet (deterministic)\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIamount\fP Positive amount to subtract\&.
+.RE
+.PP
+\fBExceptions\fP
+.RS 4
+\fIstd::invalid_argument\fP if amount < 0\&. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Chiffres from the source code\&.

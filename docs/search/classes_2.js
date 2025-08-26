@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['memory_0',['Memory',['../structChiffre_1_1Memory.html',1,'Chiffre']]]
+  ['memory_0',['Memory',['../structChiffres_1_1Memory.html',1,'Chiffres']]]
 ];

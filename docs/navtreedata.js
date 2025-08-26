@@ -29,7 +29,7 @@ var NAVTREE =
       [ "Vision", "md_README.html#autotoc_md1", null ],
       [ "Core Principles", "md_README.html#autotoc_md2", null ],
       [ "Technical Overview", "md_README.html#autotoc_md3", null ],
-      [ "Build & Run", "md_README.html#autotoc_md4", null ],
+      [ "Build &amp; Run", "md_README.html#autotoc_md4", null ],
       [ "Example", "md_README.html#autotoc_md5", null ],
       [ "Roadmap", "md_README.html#autotoc_md6", null ],
       [ "License", "md_README.html#autotoc_md7", null ]
@@ -51,8 +51,9 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"Chiffres_8h_source.html"
+"Chiffre_8h_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';
 var SYNCOFFMSG = 'click to enable panel synchronization';
+var LISTOFALLMEMBERS = 'List of all members';

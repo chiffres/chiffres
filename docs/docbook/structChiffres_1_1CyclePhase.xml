@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_structChiffres_1_1CyclePhase" xml:lang="en-US">
+<title>Chiffres::CyclePhase Struct Reference</title>
+<indexterm><primary>Chiffres::CyclePhase</primary></indexterm>
+<para>
+
+<para>Position within a natural or symbolic cycle. </para>
+ 
+</para>
+<para>
+<computeroutput>#include &lt;Chiffre.h&gt;</computeroutput>
+</para>
+<simplesect>
+    <title>Public Attributes    </title>
+        <itemizedlist>
+            <listitem><para><anchor xml:id="_structChiffres_1_1CyclePhase_1aad71f527f05582ea4d5d9027e4af7b4e"/>double <emphasis role="strong">phase</emphasis> = 0.0</para>
+
+<para>&lt; Normalized cycle position, [0,1]. </para>
+</listitem>
+        </itemizedlist>
+</simplesect>
+<section>
+<title>Detailed Description</title>
+
+<para>Position within a natural or symbolic cycle. </para>
+
+
+
+<para>Typical interpretation: a normalized year cycle in [0,1].</para>
+
+<para>Example:<itemizedlist>
+<listitem>
+<para>0.0 : Winter solstice (maximum instability for large fortunes).</para>
+</listitem><listitem>
+<para>0.25 : Spring equinox (balanced state).</para>
+</listitem><listitem>
+<para>0.5 : Summer solstice (peak expansion).</para>
+</listitem><listitem>
+<para>0.75 : Autumn equinox (contraction/balance). </para>
+</listitem></itemizedlist>
+</para>
+<para>
+The documentation for this struct was generated from the following file:</para>
+Chiffre.h</section>
+</section>

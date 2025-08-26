@@ -1,12 +1,12 @@
 #pragma once
-#include <random>
-#include <cstdint>
-#include <algorithm>
-#include <stdexcept>
-#include <cmath>
-#include "Ether.h"
 
-namespace Chiffre {
+#include <cstdint>
+#include <cmath>
+#include <stdexcept>
+#include <random>
+#include <algorithm>
+
+namespace Chiffres {
     /**
      *
      * @brief Possible states of a Chiffres wallet.
@@ -18,6 +18,7 @@ namespace Chiffre {
         /// Stochastic state, value mutates probabilistically
         Rest
     };
+
 
     /**
      *
@@ -31,6 +32,23 @@ namespace Chiffre {
     struct EthicsScore {
         /// < Range expected in [-1.0, +1.0].
         double score = 0.0;
+    };
+
+
+    /**
+     * @brief Memory of past wallet behavior.
+     *
+     * This structure accumulates a history of flows and mutations,
+     * and biases future stochastic dynamics:
+     *
+     */
+    struct Memory {
+        /// amplifies variance in future mutations.
+        double volatility_bias = 1.0;
+        /// damps shocks, makes mutations gentler.
+        double stability_bias = 1.0;
+        /// counts the numbers of recorded events.
+        std::uint64_t events = 0;
     };
 
     /**
@@ -51,25 +69,10 @@ namespace Chiffre {
         double phase = 0.0;
     };
 
-    /**
-     * @brief Memory of past wallet behavior.
-     *
-     * This structure accumulates a history of flows and mutations,
-     * and biases future stochastic dynamics:
-     *
-     */
-    struct Memory {
-        /// amplifies variance in future mutations.
-        double volatility_bias = 1.0;
-        /// damps shocks, makes mutations gentler.
-        double stability_bias = 1.0;
-        /// counts the numbers of recorded events.
-        std::uint64_t events = 0;
-    };
 
     /**
      *
-     * @class Chiffres
+     * @class Chiffre
      *
      * @brief Core abstraction of the Chiffres monetary system.
      *
@@ -84,7 +87,7 @@ namespace Chiffre {
      * The class encapsulates both deterministic accounting and stochastic dynamics.
      *
      */
-    class Chiffres {
+    class Chiffre {
     public:
         /**
          *
@@ -92,7 +95,7 @@ namespace Chiffre {
          *
          * @param initial Starting balance.
          */
-        explicit Chiffres(double initial = 0.0);
+        explicit Chiffre(double initial = 0.0);
 
         /**
          *

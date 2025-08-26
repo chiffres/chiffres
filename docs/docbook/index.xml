@@ -6,15 +6,15 @@
     <xi:include href="md_README.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
 <chapter>
     <title>Class Documentation</title>
-    <xi:include href="classChiffre_1_1Chiffres.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-    <xi:include href="structChiffre_1_1CyclePhase.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-    <xi:include href="classChiffre_1_1Ether.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-    <xi:include href="structChiffre_1_1EthicsScore.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-    <xi:include href="structChiffre_1_1Memory.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classChiffres_1_1Chiffre.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="structChiffres_1_1CyclePhase.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="classChiffres_1_1Ether.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="structChiffres_1_1EthicsScore.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="structChiffres_1_1Memory.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
 </chapter>
 <chapter>
     <title>File Documentation</title>
-    <xi:include href="Chiffres_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+    <xi:include href="Chiffre_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     <xi:include href="Ether_8h_source.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
 </chapter>
 <index/>

@@ -4,17 +4,17 @@
 <programlisting linenumbering="unnumbered">1 <emphasis role="preprocessor">#pragma&#32;once</emphasis>
 2 <emphasis role="preprocessor">#include&#32;&lt;algorithm&gt;</emphasis>
 3 
-4 <emphasis role="keyword">namespace&#32;</emphasis>Chiffre&#32;{
+4 <emphasis role="keyword">namespace&#32;</emphasis>Chiffres&#32;{
 5 
-26 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="_classChiffre_1_1Ether">Ether</link>&#32;{
+26 &#32;&#32;&#32;&#32;<emphasis role="keyword">class&#32;</emphasis><link linkend="_classChiffres_1_1Ether">Ether</link>&#32;{
 27 &#32;&#32;&#32;&#32;<emphasis role="keyword">public</emphasis>:
-37 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<link linkend="_classChiffre_1_1Ether">Ether</link>&#32;&amp;<link linkend="_classChiffre_1_1Ether_1a758b0712b71b4c59a79c19e1e9139622">instance</link>();
+37 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keyword">static</emphasis>&#32;<link linkend="_classChiffres_1_1Ether">Ether</link>&#32;&amp;<link linkend="_classChiffres_1_1Ether_1a758b0712b71b4c59a79c19e1e9139622">instance</link>();
 38 
-50 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[[nodiscard]]&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_classChiffre_1_1Ether_1a93c1f8ec13ab97ac36ffbd527535e788">density</link>()&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keyword">noexcept</emphasis>;
+50 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[[nodiscard]]&#32;<emphasis role="keywordtype">double</emphasis>&#32;<link linkend="_classChiffres_1_1Ether_1a93c1f8ec13ab97ac36ffbd527535e788">density</link>()&#32;<emphasis role="keyword">const</emphasis>&#32;<emphasis role="keyword">noexcept</emphasis>;
 51 
-63 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classChiffre_1_1Ether_1ab9439f26b2e38745d364920ea9faf22d">consume</link>(<emphasis role="keywordtype">double</emphasis>&#32;amount)&#32;<emphasis role="keyword">noexcept</emphasis>;
+63 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classChiffres_1_1Ether_1ab9439f26b2e38745d364920ea9faf22d">consume</link>(<emphasis role="keywordtype">double</emphasis>&#32;amount)&#32;<emphasis role="keyword">noexcept</emphasis>;
 64 
-76 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classChiffre_1_1Ether_1ae04009286f65254a37504d53c01d9bf3">dissolve</link>(<emphasis role="keywordtype">double</emphasis>&#32;amount)&#32;<emphasis role="keyword">noexcept</emphasis>;
+76 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis role="keywordtype">void</emphasis>&#32;<link linkend="_classChiffres_1_1Ether_1ae04009286f65254a37504d53c01d9bf3">dissolve</link>(<emphasis role="keywordtype">double</emphasis>&#32;amount)&#32;<emphasis role="keyword">noexcept</emphasis>;
 77 
 78 &#32;&#32;&#32;&#32;<emphasis role="keyword">private</emphasis>:
 79 

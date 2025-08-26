@@ -1,26 +1,35 @@
-#include "Chiffres.h"
+#include "Chiffre.h"
+#include "Ether.h"
 
-using namespace Chiffre;
+using namespace Chiffres;
 
-constexpr double TAU = 6.28318530717958647692; // 2*pi
+/**
+ * @brief Represents the mathematical constant τ (tau), which is the ratio of a circle's circumference to its radius.
+ *
+ * τ (tau) is approximately equal to 6.28318530717958647692. It is equivalent to 2π (two times pi) and is often used
+ * in mathematical and scientific calculations involving angular measurements, trigonometry, or periodic phenomenon.
+ *
+ */
+constexpr double TAU = 6.28318530717958647692;
 
-Chiffres::Chiffres(const double initial)
-    : total_(initial) {
-}
-
-State Chiffres::state() const noexcept {
-    return state_;
-}
-
-double Chiffres::total() const noexcept {
+double Chiffre::total() const noexcept {
     return total_;
 }
 
-const Memory & Chiffres::memory() const noexcept {
+const Memory &Chiffre::memory() const noexcept {
     return mem_;
 }
 
-void Chiffres::record_flow(const double amount, const bool incoming) {
+Chiffre::Chiffre(const double initial)
+    : total_(initial) {
+}
+
+State Chiffre::state() const noexcept {
+    return state_;
+}
+
+
+void Chiffre::record_flow(const double amount, const bool incoming) {
     const double mag = std::abs(amount);
 
     mem_.stability_bias = std::min(3.0, mem_.stability_bias * (1.0 + 0.001 * std::min(mag, 1e6) / 1e6));
@@ -28,19 +37,20 @@ void Chiffres::record_flow(const double amount, const bool incoming) {
         3.0, mem_.volatility_bias * (1.0 + 0.0005 * (incoming ? 0.5 : 1.0) * std::min(mag, 1e6) / 1e6));
 }
 
-void Chiffres::spend(const double amount) {
+void Chiffre::spend(const double amount) {
     if (amount < 0.0) throw std::invalid_argument("spend(amount<0)");
     total_ -= amount;
     record_flow(amount, /*incoming=*/false);
 }
 
-void Chiffres::receive(const double amount) {
+void Chiffre::receive(const double amount) {
     if (amount < 0.0) throw std::invalid_argument("receive(amount<0)");
     total_ += amount;
     record_flow(amount, /*incoming=*/true);
 }
 
-double Chiffres::draw_mutation_factor(const EthicsScore &ethics, const CyclePhase &cycle) const {
+
+double Chiffre::draw_mutation_factor(const EthicsScore &ethics, const CyclePhase &cycle) const {
     double mu_log = 0.0;
     double sigma_log = 0.02;
 
@@ -62,7 +72,7 @@ double Chiffres::draw_mutation_factor(const EthicsScore &ethics, const CyclePhas
     return dist(rng);
 }
 
-double Chiffres::mutate(const EthicsScore &ethics, const CyclePhase &cycle) {
+double Chiffre::mutate(const EthicsScore &ethics, const CyclePhase &cycle) {
     const double before = total_;
     const double f = draw_mutation_factor(ethics, cycle);
     total_ *= f;
@@ -77,6 +87,6 @@ double Chiffres::mutate(const EthicsScore &ethics, const CyclePhase &cycle) {
     return delta;
 }
 
-void Chiffres::set_state(State state) noexcept {
+void Chiffre::set_state(const State state) noexcept {
     state_ = state;
 }

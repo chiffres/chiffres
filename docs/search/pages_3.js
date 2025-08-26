@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['sentient_20economic_20system_0',['Chiffres – A Sentient Economic System',['../md_README.html',1,'']]],
-  ['system_1',['Chiffres – A Sentient Economic System',['../md_README.html',1,'']]]
+  ['economic_20system_0',['Chiffres – A Sentient Economic System',['../md_README.html',1,'']]],
+  ['example_1',['Example',['../md_README.html#autotoc_md5',1,'']]]
 ];

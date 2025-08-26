@@ -1,0 +1,119 @@
+.TH "Chiffres::Ether" 3 "Chiffres" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Chiffres::Ether \- Collective monetary field in the Chiffres system\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <Ether\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "double \fBdensity\fP () const noexcept"
+.br
+.RI "Get current \fBEther\fP density\&. "
+.ti -1c
+.RI "void \fBconsume\fP (double amount) noexcept"
+.br
+.RI "Consume \fBEther\fP when a gain occurs\&. "
+.ti -1c
+.RI "void \fBdissolve\fP (double amount) noexcept"
+.br
+.RI "Dissolve \fBEther\fP when a loss occurs\&. "
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBEther\fP & \fBinstance\fP ()"
+.br
+.RI "Access the unique global instance (Meyers' singleton)\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Collective monetary field in the Chiffres system\&. 
+
+\fBEther\fP represents the "atmosphere" of value shared by all Chiffres\&. It reacts to individual gains and losses, and in turn influences the probability space of all future mutations\&.
+
+.PP
+Core principles:
+.IP "\(bu" 2
+When a wallet gains in rest, \fBEther\fP is "consumed" → density decreases, value of all Chiffres increases slightly (rarer field)\&.
+.IP "\(bu" 2
+When a wallet loses in rest, \fBEther\fP "dissolves" → density increases; The value of all Chiffres decreases slightly (thicker field)\&.
+.PP
+
+.PP
+\fBEther\fP acts as a global coupling mechanism: no mutation is purely individual\&. The system becomes organically self-regulating\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void Ether::consume (double amount)\fR [noexcept]\fP"
+
+.PP
+Consume \fBEther\fP when a gain occurs\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIamount\fP Positive gain value (will be clamped)\&.
+.RE
+.PP
+Consuming reduces \fBEther\fP density, bounded by min_density\&.
+
+.PP
+This makes Chiffres globally scarcer → positive drift\&. 
+.SS "double Ether::density () const\fR [nodiscard]\fP, \fR [noexcept]\fP"
+
+.PP
+Get current \fBEther\fP density\&. 
+.PP
+\fBReturns\fP
+.RS 4
+Current density in [min_density, max_density]\&.
+.RE
+.PP
+.IP "\(bu" 2
+1\&.0 is neutral density (baseline)\&.
+.IP "\(bu" 2
+<1\&.0 means \fBEther\fP has been consumed (rarer, boosting value)\&.
+.IP "\(bu" 2
+>1\&.0 means \fBEther\fP has thickened (abundant, reducing value)\&. 
+.PP
+
+.SS "void Ether::dissolve (double amount)\fR [noexcept]\fP"
+
+.PP
+Dissolve \fBEther\fP when a loss occurs\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIamount\fP Positive loss value (will be clamped)\&.
+.RE
+.PP
+Dissolving increases \fBEther\fP density, bounded by max_density\&.
+
+.PP
+This makes Chiffres globally thicker → negative drift\&. 
+.SS "\fBEther\fP & Ether::instance ()\fR [static]\fP"
+
+.PP
+Access the unique global instance (Meyers' singleton)\&. 
+.PP
+\fBReturns\fP
+.RS 4
+Reference to the \fBEther\fP instance\&.
+.RE
+.PP
+\fBNote\fP
+.RS 4
+\fBEther\fP is unique by design\&. All wallets share the same field\&. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Chiffres from the source code\&.

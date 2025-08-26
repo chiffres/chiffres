@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['–_20a_20sentient_20economic_20system_0',['Chiffres – A Sentient Economic System',['../md_README.html',1,'']]]
+  ['license_0',['License',['../md_README.html#autotoc_md7',1,'']]]
 ];

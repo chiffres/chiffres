@@ -1,6 +1,6 @@
 #include "Ether.h"
 
-using namespace Chiffre;
+using namespace Chiffres;
 
 Ether &Ether::instance() {
     static Ether instance;

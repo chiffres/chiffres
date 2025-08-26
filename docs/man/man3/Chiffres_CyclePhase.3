@@ -1,0 +1,41 @@
+.TH "Chiffres::CyclePhase" 3 "Chiffres" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Chiffres::CyclePhase \- Position within a natural or symbolic cycle\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <Chiffre\&.h>\fP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBphase\fP = 0\&.0"
+.br
+.RI "< Normalized cycle position, [0,1]\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Position within a natural or symbolic cycle\&. 
+
+Typical interpretation: a normalized year cycle in [0,1]\&.
+
+.PP
+Example:
+.IP "\(bu" 2
+0\&.0 : Winter solstice (maximum instability for large fortunes)\&.
+.IP "\(bu" 2
+0\&.25 : Spring equinox (balanced state)\&.
+.IP "\(bu" 2
+0\&.5 : Summer solstice (peak expansion)\&.
+.IP "\(bu" 2
+0\&.75 : Autumn equinox (contraction/balance)\&. 
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Chiffres from the source code\&.

@@ -1,0 +1,36 @@
+.TH "Chiffres::Memory" 3 "Chiffres" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Chiffres::Memory \- \fBMemory\fP of past wallet behavior\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <Chiffre\&.h>\fP
+.SS "Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "double \fBvolatility_bias\fP = 1\&.0"
+.br
+.RI "amplifies variance in future mutations\&. "
+.ti -1c
+.RI "double \fBstability_bias\fP = 1\&.0"
+.br
+.RI "damps shocks, makes mutations gentler\&. "
+.ti -1c
+.RI "std::uint64_t \fBevents\fP = 0"
+.br
+.RI "counts the numbers of recorded events\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBMemory\fP of past wallet behavior\&. 
+
+This structure accumulates a history of flows and mutations, and biases future stochastic dynamics: 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Chiffres from the source code\&.

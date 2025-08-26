@@ -1,0 +1,68 @@
+\doxysection{Chiffre.\+h}
+\hypertarget{Chiffre_8h_source}{}\label{Chiffre_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <cstdint>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <cmath>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <stdexcept>}}
+\DoxyCodeLine{00006\ \textcolor{preprocessor}{\#include\ <random>}}
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ <algorithm>}}
+\DoxyCodeLine{00008\ }
+\DoxyCodeLine{00009\ \textcolor{keyword}{namespace\ }Chiffres\ \{}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{enum\ class}\ State\ \{}
+\DoxyCodeLine{00017\ \ \ \ \ \ \ \ \ Circulation,}
+\DoxyCodeLine{00019\ \ \ \ \ \ \ \ \ Rest}
+\DoxyCodeLine{00020\ \ \ \ \ \};}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structChiffres_1_1EthicsScore}{EthicsScore}}\ \{}
+\DoxyCodeLine{00034\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structChiffres_1_1EthicsScore_a551166a0fa9227929cdee03e9d80611c}{score}}\ =\ 0.0;}
+\DoxyCodeLine{00035\ \ \ \ \ \};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structChiffres_1_1Memory}{Memory}}\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structChiffres_1_1Memory_a468a19729ae6cc4583d739466aea58e9}{volatility\_bias}}\ =\ 1.0;}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structChiffres_1_1Memory_a947f4fe9255450343d95368a282fc899}{stability\_bias}}\ =\ 1.0;}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ std::uint64\_t\ \mbox{\hyperlink{structChiffres_1_1Memory_ab8c1683e633725920ed84f4ae3dbf6a1}{events}}\ =\ 0;}
+\DoxyCodeLine{00052\ \ \ \ \ \};}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keyword}{struct\ }\mbox{\hyperlink{structChiffres_1_1CyclePhase}{CyclePhase}}\ \{}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{structChiffres_1_1CyclePhase_aad71f527f05582ea4d5d9027e4af7b4e}{phase}}\ =\ 0.0;}
+\DoxyCodeLine{00070\ \ \ \ \ \};}
+\DoxyCodeLine{00071\ }
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00090\ \ \ \ \ \textcolor{keyword}{class\ }\mbox{\hyperlink{classChiffres_1_1Chiffre_a4e7fe70f5d87cc472d9951351c660ca1}{Chiffre}}\ \{}
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00098\ \ \ \ \ \ \ \ \ \textcolor{keyword}{explicit}\ \mbox{\hyperlink{classChiffres_1_1Chiffre_a4e7fe70f5d87cc472d9951351c660ca1}{Chiffre}}(\textcolor{keywordtype}{double}\ initial\ =\ 0.0);}
+\DoxyCodeLine{00099\ }
+\DoxyCodeLine{00109\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classChiffres_1_1Chiffre_af31b6e2a8342531fd5158168ba6d7669}{spend}}(\textcolor{keywordtype}{double}\ amount);}
+\DoxyCodeLine{00110\ }
+\DoxyCodeLine{00120\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classChiffres_1_1Chiffre_ae5471e24d6ee4551dc1214ab5ffa09fd}{receive}}(\textcolor{keywordtype}{double}\ amount);}
+\DoxyCodeLine{00121\ }
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classChiffres_1_1Chiffre_af0f6b25c5b4f0432bdc515153cb2d537}{mutate}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structChiffres_1_1EthicsScore}{EthicsScore}}\ \&ethics,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structChiffres_1_1CyclePhase}{CyclePhase}}\ \&cycle);}
+\DoxyCodeLine{00141\ }
+\DoxyCodeLine{00143\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classChiffres_1_1Chiffre_a9c7514bc00181101f8238423bc99c543}{set\_state}}(State\ \mbox{\hyperlink{classChiffres_1_1Chiffre_ad8e6fe2301ae00e0baaeb37ffcb43770}{state}})\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00144\ }
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ [[nodiscard]]\ State\ \mbox{\hyperlink{classChiffres_1_1Chiffre_ad8e6fe2301ae00e0baaeb37ffcb43770}{state}}()\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00147\ }
+\DoxyCodeLine{00149\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{double}\ \mbox{\hyperlink{classChiffres_1_1Chiffre_aa80436dfacfa13618045e60281e454b2}{total}}()\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00152\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structChiffres_1_1Memory}{Memory}}\ \&\mbox{\hyperlink{classChiffres_1_1Chiffre_a5f42ad78be6ca6f83a0fa96122b22402}{memory}}()\ \textcolor{keyword}{const}\ \textcolor{keyword}{noexcept};}
+\DoxyCodeLine{00153\ }
+\DoxyCodeLine{00166\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classChiffres_1_1Chiffre_adfc3d797ea07881e06b4743253ab6383}{record\_flow}}(\textcolor{keywordtype}{double}\ amount,\ \textcolor{keywordtype}{bool}\ incoming);}
+\DoxyCodeLine{00167\ }
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00185\ \ \ \ \ \ \ \ \ [[nodiscard]]\ \textcolor{keywordtype}{double}\ draw\_mutation\_factor(\textcolor{keyword}{const}\ \mbox{\hyperlink{structChiffres_1_1EthicsScore}{EthicsScore}}\ \&ethics,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structChiffres_1_1CyclePhase}{CyclePhase}}\ \&cycle)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00186\ }
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ State\ state\_\ =\ State::Circulation;}
+\DoxyCodeLine{00189\ }
+\DoxyCodeLine{00191\ \ \ \ \ \ \ \ \ \textcolor{keywordtype}{double}\ total\_;}
+\DoxyCodeLine{00192\ }
+\DoxyCodeLine{00194\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{structChiffres_1_1Memory}{Memory}}\ mem\_;}
+\DoxyCodeLine{00195\ }
+\DoxyCodeLine{00197\ \ \ \ \ \ \ \ \ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ std::mt19937\_64\ rng\{std::random\_device\{\}()\};}
+\DoxyCodeLine{00198\ \ \ \ \ \};}
+\DoxyCodeLine{00199\ \}}
+
+\end{DoxyCode}
